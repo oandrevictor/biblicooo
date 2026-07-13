@@ -1051,42 +1051,74 @@ export function Game() {
 
             {activeModal === "help" ? (
               <div className="modal-body help-content">
-                <p>
-                  Adivinhe o nome bíblico, personagem ou lugar. Você pode tentar
-                  quantas vezes precisar. Após cada palpite, as pistas mostram o
-                  quanto ele se aproxima da resposta.
+                <p className="help-intro">
+                  Descubra o personagem ou lugar bíblico. Você pode tentar quantas
+                  vezes precisar; cada palpite é comparado com a resposta em seis
+                  pistas.
                 </p>
-                <p>
-                  <strong>Testamento</strong> - verde quando o palpite pertence ao
-                  mesmo testamento (AT ou NT).
-                </p>
-                <p>
-                  <strong>Gênero</strong> - verde quando os personagens têm o mesmo
-                  gênero. Para lugares, a pista não se aplica.
-                </p>
-                <p>
-                  <strong>Era</strong> - verde quando a era bíblica coincide. As
-                  etiquetas Antes e Depois indicam a posição da resposta.
-                </p>
-                <p>
-                  <strong>Papel</strong> - compara a categoria principal, como
-                  profeta, monarca, apóstolo ou lugar.
-                </p>
-                <p>
-                  <strong>Primeira referência</strong> - mostra o primeiro livro em
-                  que o palpite aparece. As etiquetas Antes e Depois mostram a
-                  posição da resposta na ordem bíblica.
-                </p>
-                <p>
-                  <strong>Livro em comum</strong> - verde quando palpite e resposta
-                  aparecem em pelo menos um mesmo livro.
+
+                <dl className="help-definitions">
+                  <div>
+                    <dt>Testamento</dt>
+                    <dd>
+                      A parte da Bíblia em que a pessoa ou lugar é apresentado:
+                      Antigo Testamento (AT) ou Novo Testamento (NT).
+                    </dd>
+                  </div>
+                  <div>
+                    <dt>Gênero</dt>
+                    <dd>
+                      O gênero do personagem. A comparação só se aplica quando
+                      palpite e resposta são personagens; lugares mostram N/A.
+                    </dd>
+                  </div>
+                  <div>
+                    <dt>Era</dt>
+                    <dd>
+                      O período histórico da narrativa principal, como Patriarcas,
+                      Êxodo, Monarquia, Exílio, Ministério de Jesus ou Igreja
+                      primitiva.
+                    </dd>
+                  </div>
+                  <div>
+                    <dt>Papel</dt>
+                    <dd>
+                      A função principal do personagem, como profeta, monarca,
+                      apóstolo, sacerdote ou familiar. Não se aplica a lugares.
+                    </dd>
+                  </div>
+                  <div>
+                    <dt>Primeira referência</dt>
+                    <dd>
+                      O primeiro livro, na ordem dos 66 livros do cânon protestante,
+                      em que a pessoa ou lugar é mencionado.
+                    </dd>
+                  </div>
+                  <div>
+                    <dt>Livro em comum</dt>
+                    <dd>
+                      Indica se palpite e resposta são mencionados em pelo menos um
+                      mesmo livro, mesmo que suas primeiras referências sejam
+                      diferentes.
+                    </dd>
+                  </div>
+                </dl>
+
+                <p className="help-note">
+                  <strong>Antes e Depois</strong> sempre indicam onde está a
+                  resposta em relação ao palpite. <b>Antes</b> significa que a
+                  resposta vem antes; <b>Depois</b>, que ela vem depois.
                 </p>
                 <div className="legend-row" aria-label="Legenda das cores">
-                  <span><i className="legend-square match" />Certo</span>
-                  <span><i className="legend-square neutral" />Próximo</span>
+                  <span><i className="legend-square match" />Igual</span>
+                  <span><i className="legend-square neutral" />Com direção</span>
                   <span><i className="legend-square miss" />Diferente</span>
-                  <span><i className="legend-square not-applicable" />N/A</span>
+                  <span><i className="legend-square not-applicable" />Não se aplica</span>
                 </div>
+                <p className="help-summary">
+                  <strong>Resumo:</strong> reúne a melhor pista obtida até agora em
+                  cada categoria.
+                </p>
                 <button
                   className="modal-action primary"
                   type="button"

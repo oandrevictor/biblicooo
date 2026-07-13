@@ -712,7 +712,55 @@ button {
 }
 
 .help-content {
-  gap: 13px;
+  gap: 15px;
+}
+
+.help-intro {
+  color: var(--ink);
+  font-weight: 650;
+}
+
+.help-definitions {
+  display: grid;
+  margin: 0;
+}
+
+.help-definitions > div {
+  border-top: 1px solid var(--line);
+  padding: 10px 0;
+}
+
+.help-definitions > div:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.help-definitions dt {
+  color: var(--ink);
+  font-size: 0.86rem;
+  font-weight: 900;
+}
+
+.help-definitions dd {
+  margin: 3px 0 0;
+  font-size: 0.88rem;
+  line-height: 1.4;
+}
+
+.help-note {
+  border-left: 3px solid var(--warn-bg);
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--warn-bg) 14%, var(--surface));
+  padding: 10px 12px;
+  font-size: 0.88rem;
+}
+
+.help-note b,
+.help-summary strong {
+  color: var(--ink);
+}
+
+.help-summary {
+  font-size: 0.84rem;
 }
 
 .legend-row {
