@@ -87,17 +87,32 @@ button {
   font-size: 1.2rem;
   font-weight: 900;
   box-shadow: 0 1px 0 rgba(33, 28, 27, 0.04);
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+.icon-button:hover,
+.icon-button:focus-visible {
+  border-color: #c8bbae;
+  box-shadow: 0 4px 14px rgba(33, 28, 27, 0.1);
+  outline: none;
+  transform: translateY(-1px);
 }
 
 .chart-icon {
-  grid-template-columns: repeat(3, 5px);
+  display: grid;
+  grid-template-columns: repeat(3, 6px);
   align-items: end;
-  gap: 3px;
+  justify-content: center;
+  gap: 4px;
+  padding: 0;
 }
 
 .chart-icon span {
   display: block;
-  width: 5px;
+  width: 6px;
   border-radius: 2px 2px 0 0;
 }
 
@@ -137,9 +152,19 @@ button {
   border-radius: 16px;
   background: transparent;
   color: #6d625a;
-  cursor: default;
+  cursor: pointer;
   font-size: 1.12rem;
   font-weight: 850;
+  transition:
+    background 160ms ease,
+    color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.mode-tab:hover,
+.mode-tab:focus-visible {
+  color: var(--brand);
+  outline: none;
 }
 
 .mode-tab.active {
@@ -200,7 +225,8 @@ button {
 }
 
 .submit,
-.share-button {
+.share-button,
+.secondary-button {
   border: 0;
   border-radius: 16px;
   background: var(--brand);
@@ -262,11 +288,26 @@ button {
   min-height: 58px;
 }
 
+.secondary-button {
+  width: 100%;
+  min-height: 52px;
+  margin-top: 10px;
+  border: 2px solid #d6c9bb;
+  background: var(--surface);
+  color: var(--brand);
+}
+
 .share-status {
   margin: 12px 0 0;
   color: var(--good);
   font-weight: 850;
   text-align: center;
+}
+
+.form-note {
+  margin: 0;
+  color: var(--muted);
+  font-weight: 750;
 }
 
 .attempts {
@@ -382,6 +423,129 @@ button {
   margin: 0;
 }
 
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(33, 28, 27, 0.28);
+}
+
+.modal {
+  width: min(560px, 100%);
+  max-height: calc(100vh - 40px);
+  overflow: auto;
+  border: 2px solid var(--line);
+  border-radius: 18px;
+  background: var(--surface);
+  box-shadow: 0 18px 54px rgba(33, 28, 27, 0.2);
+}
+
+.modal-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border-bottom: 2px solid var(--line);
+  padding: 18px 20px;
+}
+
+.modal-head h2 {
+  margin: 0;
+  font-size: 1.36rem;
+  line-height: 1.1;
+}
+
+.modal-close {
+  display: inline-grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border: 2px solid var(--line);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 950;
+}
+
+.modal-body {
+  display: grid;
+  gap: 16px;
+  padding: 20px;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+.modal-body p {
+  margin: 0;
+}
+
+.legend-grid {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr);
+  gap: 10px 12px;
+  align-items: center;
+}
+
+.legend-square {
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
+}
+
+.legend-square.match {
+  background: var(--good);
+}
+
+.legend-square.miss {
+  background: var(--bad);
+}
+
+.legend-square.neutral {
+  background: var(--warn);
+}
+
+.legend-square.not-applicable {
+  background: var(--na);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.stat-box {
+  min-height: 92px;
+  border: 2px solid var(--line);
+  border-radius: 12px;
+  padding: 12px;
+  background: #fbfaf8;
+}
+
+.stat-box span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 900;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.stat-box strong {
+  display: block;
+  margin-top: 10px;
+  color: var(--ink);
+  font-size: 1.65rem;
+  font-weight: 950;
+  line-height: 1;
+}
+
 @media (max-width: 760px) {
   .shell {
     width: min(100vw - 24px, 760px);
@@ -417,6 +581,10 @@ button {
   }
 
   .clues {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .stats-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -487,5 +655,9 @@ button {
 
   .clue strong {
     font-size: 1rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
   }
 }

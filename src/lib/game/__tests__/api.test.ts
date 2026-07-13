@@ -1,5 +1,11 @@
 import { describe, expect, it } from "vitest";
-import { createGuessResponse, createRevealResponse } from "../api";
+import {
+  createGuessResponse,
+  createPracticeGuessResponse,
+  createPracticeStartResponse,
+  createRevealResponse
+} from "../api";
+import { getAnswerPool } from "../entities";
 import { getDailyAnswer } from "../daily";
 
 describe("createGuessResponse", () => {
@@ -60,6 +66,34 @@ describe("createRevealResponse", () => {
     expect(response.ok).toBe(true);
     if (response.ok) {
       expect(response.answer.name).toBeTruthy();
+    }
+  });
+});
+
+describe("practice responses", () => {
+  it("starts a practice game from the answer pool", () => {
+    const pool = getAnswerPool();
+    const response = createPracticeStartResponse(() => 0);
+
+    expect(response.answerId).toBe(pool[0]?.id);
+  });
+
+  it("rejects invalid practice answers", () => {
+    expect(
+      createPracticeGuessResponse({ guessId: "jesus", answerId: "missing" }).ok
+    ).toBe(false);
+  });
+
+  it("scores practice guesses against the selected answer", () => {
+    const response = createPracticeGuessResponse({
+      guessId: "josue",
+      answerId: "josue"
+    });
+
+    expect(response.ok).toBe(true);
+    if (response.ok) {
+      expect(response.solved).toBe(true);
+      expect(response.answer?.name).toBe("Josue");
     }
   });
 });

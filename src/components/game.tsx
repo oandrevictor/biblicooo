@@ -46,6 +46,19 @@ type RevealApiResponse =
       error: string;
     };
 
+type PracticeStartResponse =
+  | {
+      ok: true;
+      answerId: string;
+    }
+  | {
+      ok: false;
+      error: string;
+    };
+
+type GameMode = "daily" | "practice";
+type Modal = "help" | "stats" | null;
+
 const STORAGE_PREFIX = "biblicooo:";
 const BOOK_LABELS: Record<string, string> = {
   Genesis: "Gênesis",
@@ -215,6 +228,38 @@ function parseStoredAttempts(value: string): StoredAttempt[] {
   }
 }
 
+function readLocalDailyStats() {
+  let played = 0;
+  let solved = 0;
+  let totalAttempts = 0;
+
+  for (let index = 0; index < window.localStorage.length; index += 1) {
+    const key = window.localStorage.key(index);
+    if (!key?.startsWith(STORAGE_PREFIX)) {
+      continue;
+    }
+
+    const stored = window.localStorage.getItem(key);
+    const attempts = stored ? parseStoredAttempts(stored) : [];
+    if (attempts.length === 0) {
+      continue;
+    }
+
+    played += 1;
+    totalAttempts += attempts.length;
+
+    if (attempts.some((attempt) => attempt.correct)) {
+      solved += 1;
+    }
+  }
+
+  return {
+    played,
+    solved,
+    totalAttempts
+  };
+}
+
 function copyTextWithSelection(text: string) {
   const activeElement = document.activeElement;
   const textarea = document.createElement("textarea");
@@ -261,13 +306,22 @@ async function writeClipboardText(text: string) {
 export function Game() {
   const [today, setToday] = useState<TodayPayload | null>(null);
   const [entities, setEntities] = useState<PublicEntity[]>([]);
-  const [attempts, setAttempts] = useState<StoredAttempt[]>([]);
+  const [mode, setMode] = useState<GameMode>("daily");
+  const [dailyAttempts, setDailyAttempts] = useState<StoredAttempt[]>([]);
+  const [practiceAttempts, setPracticeAttempts] = useState<StoredAttempt[]>([]);
+  const [practiceAnswerId, setPracticeAnswerId] = useState<string | null>(null);
   const [revealedAnswer, setRevealedAnswer] = useState<EndGameAnswer | null>(
     null
   );
   const [input, setInput] = useState("");
   const [error, setError] = useState("");
   const [shareStatus, setShareStatus] = useState("");
+  const [activeModal, setActiveModal] = useState<Modal>(null);
+  const [dailyStats, setDailyStats] = useState({
+    played: 0,
+    solved: 0,
+    totalAttempts: 0
+  });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
@@ -286,8 +340,9 @@ export function Game() {
         `${STORAGE_PREFIX}${todayPayload.date}`
       );
       if (stored) {
-        setAttempts(parseStoredAttempts(stored));
+        setDailyAttempts(parseStoredAttempts(stored));
       }
+      setDailyStats(readLocalDailyStats());
     }
 
     loadGame().catch(() => {
@@ -302,17 +357,23 @@ export function Game() {
 
     window.localStorage.setItem(
       `${STORAGE_PREFIX}${today.date}`,
-      JSON.stringify(attempts)
+      JSON.stringify(dailyAttempts)
     );
-  }, [attempts, today]);
+    setDailyStats(readLocalDailyStats());
+  }, [dailyAttempts, today]);
 
   useEffect(() => {
     async function revealAnswer() {
-      if (!today || revealedAnswer || attempts.length === 0) {
+      if (
+        mode !== "daily" ||
+        !today ||
+        revealedAnswer ||
+        dailyAttempts.length === 0
+      ) {
         return;
       }
 
-      const hasSolved = attempts.some((attempt) => attempt.correct);
+      const hasSolved = dailyAttempts.some((attempt) => attempt.correct);
       if (!hasSolved) {
         return;
       }
@@ -321,7 +382,7 @@ export function Game() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          guessIds: attempts.map((attempt) => attempt.guess.id)
+          guessIds: dailyAttempts.map((attempt) => attempt.guess.id)
         })
       });
       const payload = (await response.json()) as RevealApiResponse;
@@ -333,16 +394,56 @@ export function Game() {
     revealAnswer().catch(() => {
       setError("Não foi possível revelar a resposta.");
     });
-  }, [attempts, revealedAnswer, today]);
+  }, [dailyAttempts, mode, revealedAnswer, today]);
+
+  async function startPracticeRound() {
+    setError("");
+    setShareStatus("");
+    setRevealedAnswer(null);
+    setPracticeAttempts([]);
+    setPracticeAnswerId(null);
+    setInput("");
+
+    try {
+      const response = await fetch("/api/game/practice/start", {
+        method: "POST"
+      });
+      const payload = (await response.json()) as PracticeStartResponse;
+
+      if (!payload.ok) {
+        setError(payload.error);
+        return;
+      }
+
+      setPracticeAnswerId(payload.answerId);
+    } catch {
+      setError("Não foi possível iniciar a prática.");
+    }
+  }
+
+  useEffect(() => {
+    if (mode === "practice" && !practiceAnswerId) {
+      startPracticeRound().catch(() => {
+        setError("Não foi possível iniciar a prática.");
+      });
+    }
+  }, [mode, practiceAnswerId]);
 
   const guessedIds = useMemo(
-    () => new Set(attempts.map((attempt) => attempt.guess.id)),
-    [attempts]
+    () =>
+      new Set(
+        (mode === "daily" ? dailyAttempts : practiceAttempts).map(
+          (attempt) => attempt.guess.id
+        )
+      ),
+    [dailyAttempts, mode, practiceAttempts]
   );
 
+  const attempts = mode === "daily" ? dailyAttempts : practiceAttempts;
   const solved = attempts.some((attempt) => attempt.correct);
   const solvedAttempt = attempts.find((attempt) => attempt.correct);
   const gameOver = solved;
+  const isPractice = mode === "practice";
 
   const selectedEntity = useMemo(() => {
     const normalized = normalizeText(input);
@@ -362,23 +463,34 @@ export function Game() {
       return;
     }
 
+    if (isPractice && !practiceAnswerId) {
+      setError("A prática ainda está carregando.");
+      return;
+    }
+
     if (!selectedEntity) {
       setError("Escolha um nome da lista.");
       return;
     }
 
     if (guessedIds.has(selectedEntity.id)) {
-      setError("Você já tentou esse nome hoje.");
+      setError("Você já tentou esse nome nesta partida.");
       return;
     }
 
     setIsSubmitting(true);
     try {
-      const response = await fetch("/api/game/guess", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ guessId: selectedEntity.id })
-      });
+      const response = await fetch(
+        isPractice ? "/api/game/practice/guess" : "/api/game/guess",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            guessId: selectedEntity.id,
+            ...(isPractice ? { answerId: practiceAnswerId } : {})
+          })
+        }
+      );
       const payload = (await response.json()) as GuessApiResponse;
 
       if (!payload.ok) {
@@ -390,7 +502,11 @@ export function Game() {
         setRevealedAnswer(payload.answer);
       }
 
-      setAttempts((current) => [...current, payload.feedback]);
+      if (isPractice) {
+        setPracticeAttempts((current) => [...current, payload.feedback]);
+      } else {
+        setDailyAttempts((current) => [...current, payload.feedback]);
+      }
       setInput("");
     } catch {
       setError("Não foi possível enviar o palpite.");
@@ -404,7 +520,10 @@ export function Game() {
       return;
     }
 
-    const shareText = buildShareText(attempts, today.date);
+    const shareText = buildShareText(
+      attempts,
+      isPractice ? `${today.date} prática` : today.date
+    );
 
     setError("");
     setShareStatus("Copiando...");
@@ -418,6 +537,19 @@ export function Game() {
     }
   }
 
+  function selectMode(nextMode: GameMode) {
+    setMode(nextMode);
+    setError("");
+    setShareStatus("");
+    setInput("");
+    setRevealedAnswer(null);
+  }
+
+  const winRate =
+    dailyStats.played === 0
+      ? 0
+      : Math.round((dailyStats.solved / dailyStats.played) * 100);
+
   return (
     <main className="shell">
       <header className="topbar">
@@ -425,13 +557,21 @@ export function Game() {
           Biblic<span>.ooo</span>
         </h1>
         <div className="header-actions" aria-label="Ações">
-          <button className="icon-button" type="button" aria-label="Ajuda">
+          <button
+            className="icon-button"
+            type="button"
+            aria-label="Ajuda"
+            title="Ajuda"
+            onClick={() => setActiveModal("help")}
+          >
             ?
           </button>
           <button
             className="icon-button chart-icon"
             type="button"
             aria-label="Estatísticas"
+            title="Estatísticas"
+            onClick={() => setActiveModal("stats")}
           >
             <span />
             <span />
@@ -442,16 +582,30 @@ export function Game() {
 
       <section className="game-board">
         <div className="mode-tabs" aria-label="Modo de jogo">
-          <button className="mode-tab active" type="button">
+          <button
+            className={`mode-tab ${mode === "daily" ? "active" : ""}`}
+            type="button"
+            aria-pressed={mode === "daily"}
+            onClick={() => selectMode("daily")}
+          >
             Palavra do dia
           </button>
-          <button className="mode-tab" type="button" aria-disabled="true">
+          <button
+            className={`mode-tab ${mode === "practice" ? "active" : ""}`}
+            type="button"
+            aria-pressed={mode === "practice"}
+            onClick={() => selectMode("practice")}
+          >
             Prática
           </button>
         </div>
 
         <div className="round-meta">
-          <span>Uma nova palavra a cada dia</span>
+          <span>
+            {isPractice
+              ? "Modo prática - sem limite de partidas"
+              : "Uma nova palavra a cada dia"}
+          </span>
           <strong>
             {attempts.length} {attempts.length === 1 ? "tentativa" : "tentativas"}
           </strong>
@@ -467,6 +621,15 @@ export function Game() {
             <button className="share-button" type="button" onClick={copyShareResult}>
               Compartilhar resultado
             </button>
+            {isPractice ? (
+              <button
+                className="secondary-button"
+                type="button"
+                onClick={startPracticeRound}
+              >
+                Nova prática
+              </button>
+            ) : null}
             {shareStatus ? <p className="share-status">{shareStatus}</p> : null}
           </section>
         ) : null}
@@ -482,13 +645,17 @@ export function Game() {
                   value={input}
                   onChange={(event) => setInput(event.target.value)}
                   placeholder="Digite um nome ou lugar bíblico..."
-                  disabled={!today}
+                  disabled={!today || (isPractice && !practiceAnswerId)}
                   autoComplete="off"
                 />
                 <button
                   className="submit"
                   type="submit"
-                  disabled={!today || isSubmitting}
+                  disabled={
+                    !today ||
+                    isSubmitting ||
+                    (isPractice && !practiceAnswerId)
+                  }
                 >
                   Adivinhar
                 </button>
@@ -501,6 +668,9 @@ export function Game() {
                 ))}
               </datalist>
               {error ? <p className="error">{error}</p> : null}
+              {isPractice && !practiceAnswerId && !error ? (
+                <p className="form-note">Preparando uma partida prática...</p>
+              ) : null}
             </form>
           </section>
         ) : null}
@@ -571,6 +741,89 @@ export function Game() {
           )}
         </section>
       </section>
+
+      {activeModal ? (
+        <div
+          className="modal-backdrop"
+          role="presentation"
+          onClick={() => setActiveModal(null)}
+        >
+          <section
+            className="modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby={`${activeModal}-title`}
+            onClick={(event) => event.stopPropagation()}
+          >
+            <div className="modal-head">
+              <h2 id={`${activeModal}-title`}>
+                {activeModal === "help" ? "Como jogar" : "Estatísticas"}
+              </h2>
+              <button
+                className="modal-close"
+                type="button"
+                aria-label="Fechar"
+                onClick={() => setActiveModal(null)}
+              >
+                X
+              </button>
+            </div>
+
+            {activeModal === "help" ? (
+              <div className="modal-body">
+                <p>
+                  Tente adivinhar o personagem ou lugar bíblico. Depois de cada
+                  palpite, cada pista mostra se a sua escolha combina com a
+                  resposta.
+                </p>
+                <div className="legend-grid">
+                  <span className="legend-square match" />
+                  <p>Verde: mesma característica.</p>
+                  <span className="legend-square neutral" />
+                  <p>Amarelo: a resposta está antes ou depois nessa ordem.</p>
+                  <span className="legend-square miss" />
+                  <p>Vermelho: característica diferente.</p>
+                  <span className="legend-square not-applicable" />
+                  <p>Cinza: pista não se aplica ao tipo de palpite.</p>
+                </div>
+                <p>
+                  Na prática, uma nova resposta é escolhida quando você inicia
+                  outra rodada. A palavra do dia continua salva separadamente.
+                </p>
+              </div>
+            ) : (
+              <div className="modal-body">
+                <div className="stats-grid">
+                  <div className="stat-box">
+                    <span>Partidas</span>
+                    <strong>{dailyStats.played}</strong>
+                  </div>
+                  <div className="stat-box">
+                    <span>Vitórias</span>
+                    <strong>{dailyStats.solved}</strong>
+                  </div>
+                  <div className="stat-box">
+                    <span>Aproveitamento</span>
+                    <strong>{winRate}%</strong>
+                  </div>
+                  <div className="stat-box">
+                    <span>Tentativas hoje</span>
+                    <strong>{dailyAttempts.length}</strong>
+                  </div>
+                  <div className="stat-box">
+                    <span>Prática atual</span>
+                    <strong>{practiceAttempts.length}</strong>
+                  </div>
+                  <div className="stat-box">
+                    <span>Banco</span>
+                    <strong>{today?.answerPoolSize ?? 0}</strong>
+                  </div>
+                </div>
+              </div>
+            )}
+          </section>
+        </div>
+      ) : null}
     </main>
   );
 }

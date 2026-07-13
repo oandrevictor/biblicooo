@@ -1,11 +1,13 @@
 import { getDailyAnswer, getGameDate } from "./daily";
-import { getEntityById } from "./entities";
+import { getAnswerPool, getEntityById } from "./entities";
 import { evaluateGuess } from "./feedback";
 import type {
   BiblicalEntity,
   EndGameAnswer,
   GuessRequest,
   GuessResponse,
+  PracticeGuessRequest,
+  PracticeStartResponse,
   RevealRequest,
   RevealResponse
 } from "./types";
@@ -70,5 +72,53 @@ export function createRevealResponse(
     ok: true,
     date: gameDate,
     answer: createAnswerSummary(answer)
+  };
+}
+
+export function createPracticeStartResponse(
+  random = Math.random
+): PracticeStartResponse {
+  const pool = getAnswerPool();
+  const index = Math.floor(random() * pool.length);
+  const answer = pool[Math.min(index, pool.length - 1)];
+
+  return {
+    ok: true,
+    answerId: answer.id
+  };
+}
+
+export function createPracticeGuessResponse(
+  body: Partial<PracticeGuessRequest>
+): GuessResponse {
+  const guessId = body.guessId;
+  const answerId = body.answerId;
+
+  if (!guessId || typeof guessId !== "string") {
+    return { ok: false, error: "Palpite invalido." };
+  }
+
+  if (!answerId || typeof answerId !== "string") {
+    return { ok: false, error: "Partida de pratica invalida." };
+  }
+
+  const guess = getEntityById(guessId);
+  if (!guess) {
+    return { ok: false, error: "Palpite nao encontrado." };
+  }
+
+  const answer = getEntityById(answerId);
+  if (!answer?.answerEligible) {
+    return { ok: false, error: "Partida de pratica invalida." };
+  }
+
+  const feedback = evaluateGuess(guess, answer);
+
+  return {
+    ok: true,
+    date: "practice",
+    feedback,
+    solved: feedback.correct,
+    ...(feedback.correct ? { answer: createAnswerSummary(answer) } : {})
   };
 }

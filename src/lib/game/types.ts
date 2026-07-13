@@ -146,3 +146,13 @@ export type RevealResponse =
       ok: false;
       error: string;
     };
+
+export type PracticeStartResponse = {
+  ok: true;
+  answerId: string;
+};
+
+export type PracticeGuessRequest = {
+  guessId: string;
+  answerId: string;
+};
