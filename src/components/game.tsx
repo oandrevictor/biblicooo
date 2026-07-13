@@ -626,7 +626,7 @@ export function Game() {
 
   const suggestions = useMemo(() => {
     const normalizedInput = normalizeText(input);
-    if (normalizedInput.length <= 4) {
+    if (normalizedInput.length < 1) {
       return [];
     }
 
@@ -658,12 +658,11 @@ export function Game() {
       .map(({ entity }) => entity);
   }, [availableEntities, guessedIds, input]);
 
-  async function submitGuess(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
+  async function submitEntity(entity: PublicEntity | undefined) {
     setError("");
     setShareStatus("");
 
-    if (!today || solved) {
+    if (!today || solved || isSubmitting) {
       return;
     }
 
@@ -672,12 +671,12 @@ export function Game() {
       return;
     }
 
-    if (!selectedEntity) {
+    if (!entity) {
       setError("Escolha um nome da lista.");
       return;
     }
 
-    if (guessedIds.has(selectedEntity.id)) {
+    if (guessedIds.has(entity.id)) {
       setError("Você já tentou esse nome nesta partida.");
       return;
     }
@@ -690,7 +689,7 @@ export function Game() {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            guessId: selectedEntity.id,
+            guessId: entity.id,
             ...(isPractice ? { answerId: practiceAnswerId } : {})
           })
         }
@@ -717,6 +716,11 @@ export function Game() {
     } finally {
       setIsSubmitting(false);
     }
+  }
+
+  async function submitGuess(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    await submitEntity(selectedEntity);
   }
 
   async function copyShareResult() {
@@ -749,9 +753,10 @@ export function Game() {
     setRevealedAnswer(null);
   }
 
-  function selectSuggestion(entity: PublicEntity) {
+  async function selectSuggestion(entity: PublicEntity) {
     setInput(entity.name);
     setError("");
+    await submitEntity(entity);
   }
 
   function toggleTheme() {
@@ -926,6 +931,7 @@ export function Game() {
                       className="suggestion-chip"
                       type="button"
                       key={entity.id}
+                      disabled={isSubmitting}
                       onClick={() => selectSuggestion(entity)}
                     >
                       {entity.name}
