@@ -169,19 +169,23 @@ function sharedBookLabel(feedback: GuessFeedback) {
 }
 
 function resultDescription(attempt: GuessFeedback) {
-  const type = typeLabel(attempt.guess.type).toLowerCase();
-  const role = formatCharacterRole(attempt.role.guess).toLowerCase();
-  const era = ERA_LABELS[attempt.era.guess].toLowerCase();
+  const details = [typeLabel(attempt.guess.type)];
+  if (attempt.guess.type === "character") {
+    details.push(formatCharacterRole(attempt.role.guess));
+  }
+  details.push(ERA_LABELS[attempt.era.guess]);
 
-  return `${type}, ${role}, ligado a ${era}.`;
+  return details.join(" · ");
 }
 
 function answerDescription(answer: EndGameAnswer) {
-  const type = typeLabel(answer.type).toLowerCase();
-  const role = formatCharacterRole(answer.role).toLowerCase();
-  const era = ERA_LABELS[answer.era].toLowerCase();
+  const details = [typeLabel(answer.type)];
+  if (answer.type === "character") {
+    details.push(formatCharacterRole(answer.role));
+  }
+  details.push(ERA_LABELS[answer.era]);
 
-  return `${type}, ${role}, ligado a ${era}.`;
+  return details.join(" · ");
 }
 
 function endGameTitle(
@@ -197,13 +201,11 @@ function endGameDescription(
   revealedAnswer: EndGameAnswer | null
 ) {
   if (revealedAnswer) {
-    return `Resposta: ${revealedAnswer.name}. ${answerDescription(revealedAnswer)}`;
+    return answerDescription(revealedAnswer);
   }
 
   if (solvedAttempt) {
-    return `Resposta: ${solvedAttempt.guess.name}. ${resultDescription(
-      solvedAttempt
-    )}`;
+    return resultDescription(solvedAttempt);
   }
 
   const lastAttempt = attempts.at(-1);
@@ -693,7 +695,7 @@ export function Game() {
             <i />
           </span>
           <span className="brand-name">
-            Biblic<span>.ooo</span>
+            Biblicooo<span>.com</span>
           </span>
         </h1>
         <div className="header-actions" aria-label="Ações">
@@ -770,23 +772,29 @@ export function Game() {
 
         {gameOver ? (
           <section className={solved ? "result-card win" : "result-card"}>
-            <span>Fim de jogo</span>
+            <span>Resposta correta</span>
             <h2>{endGameTitle(solvedAttempt, revealedAnswer)}</h2>
             <p>
               {endGameDescription(solvedAttempt, attempts, revealedAnswer)}
             </p>
-            <button className="share-button" type="button" onClick={copyShareResult}>
-              Compartilhar resultado
-            </button>
-            {isPractice ? (
+            <div className="result-actions">
               <button
-                className="secondary-button"
+                className="share-button"
                 type="button"
-                onClick={startPracticeRound}
+                onClick={copyShareResult}
               >
-                Nova prática
+                Compartilhar resultado
               </button>
-            ) : null}
+              {isPractice ? (
+                <button
+                  className="secondary-button"
+                  type="button"
+                  onClick={startPracticeRound}
+                >
+                  Nova prática
+                </button>
+              ) : null}
+            </div>
             {shareStatus ? <p className="share-status">{shareStatus}</p> : null}
           </section>
         ) : null}

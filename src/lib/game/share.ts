@@ -29,7 +29,7 @@ export function buildShareText(attempts: GuessFeedback[], date: string) {
   const rows = visibleAttempts.map(attemptRow);
 
   return [
-    `Biblic.ooo ${date}`,
+    `Biblicooo.com ${date}`,
     `Tentativas: ${attempts.length}`,
     "",
     ...rows

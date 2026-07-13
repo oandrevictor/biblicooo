@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Biblicooo",
+  title: "Biblicooo.com",
   description: "Adivinhe o personagem ou lugar biblico do dia."
 };
 
