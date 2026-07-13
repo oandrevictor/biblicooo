@@ -469,6 +469,60 @@ button {
   text-align: center;
 }
 
+.summary-card {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  gap: 8px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--soft);
+  padding: 8px;
+}
+
+.summary-heading {
+  display: grid;
+  place-items: center;
+  border-right: 1px solid var(--line);
+  color: var(--ink);
+}
+
+.summary-heading strong {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 0.7rem;
+  font-weight: 950;
+  text-transform: uppercase;
+}
+
+.summary-heading span {
+  display: none;
+}
+
+.summary-clues {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 5px;
+}
+
+.summary-clue {
+  min-height: 56px;
+  padding: 4px 5px;
+}
+
+.summary-clue span {
+  font-size: 0.57rem;
+}
+
+.summary-clue strong {
+  font-size: 0.78rem;
+}
+
+.summary-clue .direction-badge {
+  margin-top: 4px;
+  padding: 1px 7px;
+  font-size: 0.56rem;
+}
+
 .attempts {
   display: grid;
   gap: 12px;
@@ -871,6 +925,47 @@ button {
 
   .secondary-button {
     width: 100%;
+  }
+
+  .summary-card {
+    grid-template-columns: 1fr;
+    gap: 6px;
+    padding: 7px;
+  }
+
+  .summary-heading {
+    display: flex;
+    justify-content: space-between;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+    padding: 0 1px 5px;
+  }
+
+  .summary-heading strong {
+    writing-mode: initial;
+    transform: none;
+  }
+
+  .summary-heading span {
+    display: none;
+  }
+
+  .summary-clues {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 5px;
+  }
+
+  .summary-clue {
+    min-height: 54px;
+    padding: 4px;
+  }
+
+  .summary-clue span {
+    font-size: 0.52rem;
+  }
+
+  .summary-clue strong {
+    font-size: 0.72rem;
   }
 
   .clues {

@@ -9,6 +9,7 @@ import {
 } from "@/lib/game/labels";
 import { normalizeText } from "@/lib/game/normalize";
 import { buildShareText } from "@/lib/game/share";
+import { getBestResults } from "@/lib/game/summary";
 import type {
   EndGameAnswer,
   GuessFeedback,
@@ -214,6 +215,85 @@ function endGameDescription(
   }
 
   return `Último palpite: ${lastAttempt.guess.name}. Volte amanhã para uma nova palavra.`;
+}
+
+type SummaryResults = NonNullable<ReturnType<typeof getBestResults>>;
+
+function SummaryCard({ results }: { results: SummaryResults }) {
+  const testament = results.testament;
+  const gender = results.gender;
+  const era = results.era;
+  const role = results.role;
+  const firstAppearance = results.firstAppearance;
+  const sharedBook = results.sharedBook;
+
+  return (
+    <section className="summary-card" aria-label="Resumo das melhores pistas">
+      <div className="summary-heading">
+        <strong>Resumo</strong>
+        <span>Melhores pistas</span>
+      </div>
+      <div className="summary-clues">
+        <div
+          className={`clue summary-clue ${statusClass(
+            testament.testament.status
+          )}`}
+        >
+          <span>Testamento</span>
+          <strong title={TESTAMENT_LABELS[testament.testament.guess]}>
+            {testamentShortLabel(testament.testament.guess)}
+          </strong>
+        </div>
+        <div
+          className={`clue summary-clue ${statusClass(gender.gender.status)}`}
+        >
+          <span>Gênero</span>
+          <strong title={formatGender(gender.gender.guess)}>
+            {genderShortLabel(gender.gender.guess)}
+          </strong>
+        </div>
+        <div className={`clue summary-clue ${statusClass(era.era.status)}`}>
+          <span>Era</span>
+          <strong>{eraLabel(era)}</strong>
+          {era.era.status === "before" || era.era.status === "after" ? (
+            <small className="direction-badge">
+              {relativePositionLabel(era.era.status)}
+            </small>
+          ) : null}
+        </div>
+        <div className={`clue summary-clue ${statusClass(role.role.status)}`}>
+          <span>Papel</span>
+          <strong>{formatCharacterRole(role.role.guess)}</strong>
+        </div>
+        <div
+          className={`clue summary-clue ${statusClass(
+            firstAppearance.firstAppearance.status
+          )}`}
+        >
+          <span>Primeira referência</span>
+          <strong>{firstAppearanceLabel(firstAppearance)}</strong>
+          {firstAppearance.firstAppearance.status === "before" ||
+          firstAppearance.firstAppearance.status === "after" ? (
+            <small className="direction-badge">
+              {relativePositionLabel(
+                firstAppearance.firstAppearance.status
+              )}
+            </small>
+          ) : null}
+        </div>
+        <div
+          className={`clue summary-clue ${statusClass(
+            sharedBook.sharedBook.status
+          )}`}
+        >
+          <span>Livro em comum</span>
+          <strong title={sharedBook.sharedBook.books.join(", ")}>
+            {sharedBookLabel(sharedBook)}
+          </strong>
+        </div>
+      </div>
+    </section>
+  );
 }
 
 function parseStoredAttempts(value: string): StoredAttempt[] {
@@ -525,6 +605,7 @@ export function Game() {
   const gameOver = solved;
   const isPractice = mode === "practice";
   const answerType = isPractice ? practiceAnswerType : today?.answerType;
+  const bestResults = useMemo(() => getBestResults(attempts), [attempts]);
 
   const availableEntities = useMemo(
     () =>
@@ -645,7 +726,7 @@ export function Game() {
 
     const shareText = buildShareText(
       attempts,
-      isPractice ? `${today.date} prática` : today.date
+      isPractice ? "Prática" : today.gameNumber
     );
 
     setError("");
@@ -859,6 +940,8 @@ export function Game() {
             </form>
           </section>
         ) : null}
+
+        {bestResults ? <SummaryCard results={bestResults} /> : null}
 
         <section className="attempts" aria-label="Historico de tentativas">
           {attempts.length === 0 ? (

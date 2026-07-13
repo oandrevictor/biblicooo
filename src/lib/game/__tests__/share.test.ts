@@ -25,12 +25,21 @@ describe("buildShareText", () => {
       "josue"
     ].map((id) => evaluateGuess(entity(id), answer));
 
-    const result = buildShareText(attempts, "2026-07-08");
+    const result = buildShareText(attempts, 1);
     const lines = result.split("\n");
 
-    expect(lines[0]).toBe("Biblicooo.com 2026-07-08");
+    expect(lines[0]).toBe("Biblic.ooo #1");
     expect(lines[1]).toBe("Tentativas: 7");
     expect(lines.slice(3)).toHaveLength(6);
     expect(lines.at(-1)).toBe("🟩🟩🟩🟩🟩🟩");
+  });
+
+  it("labels practice results without using the daily sequence", () => {
+    const answer = entity("josue");
+    const attempts = [evaluateGuess(answer, answer)];
+
+    expect(buildShareText(attempts, "Prática").split("\n")[0]).toBe(
+      "Biblic.ooo Prática"
+    );
   });
 });

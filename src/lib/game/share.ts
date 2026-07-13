@@ -24,12 +24,17 @@ function attemptRow(attempt: GuessFeedback) {
   ].join("");
 }
 
-export function buildShareText(attempts: GuessFeedback[], date: string) {
+export function buildShareText(
+  attempts: GuessFeedback[],
+  game: number | "Prática"
+) {
   const visibleAttempts = attempts.slice(-6);
   const rows = visibleAttempts.map(attemptRow);
+  const title =
+    typeof game === "number" ? `Biblic.ooo #${game}` : "Biblic.ooo Prática";
 
   return [
-    `Biblicooo.com ${date}`,
+    title,
     `Tentativas: ${attempts.length}`,
     "",
     ...rows

@@ -106,6 +106,7 @@ export type TodayPayload = {
   attemptsAllowed: number | null;
   answerPoolSize: number;
   answerType: EntityType;
+  gameNumber: number;
 };
 
 export type EndGameAnswer = {

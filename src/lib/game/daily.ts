@@ -1,6 +1,12 @@
 import { getAnswerPool } from "./entities";
 
 export const GAME_TIMEZONE = "America/Fortaleza";
+export const FIRST_GAME_DATE = "2026-07-13";
+
+function dateOrdinal(date: string) {
+  const [year, month, day] = date.split("-").map(Number);
+  return Math.floor(Date.UTC(year, month - 1, day) / 86_400_000);
+}
 
 export function getGameDate(date = new Date(), timezone = GAME_TIMEZONE) {
   const parts = new Intl.DateTimeFormat("en-CA", {
@@ -31,6 +37,13 @@ export function stableHash(value: string) {
   return hash >>> 0;
 }
 
+export function getGameNumber(dateString = getGameDate()) {
+  const gameNumber =
+    dateOrdinal(dateString) - dateOrdinal(FIRST_GAME_DATE) + 1;
+
+  return Math.max(1, gameNumber);
+}
+
 export function getDailyAnswer(dateString = getGameDate()) {
   const pool = getAnswerPool();
   if (pool.length === 0) {
@@ -49,6 +62,7 @@ export function getTodayPayload(date = new Date()) {
     timezone: GAME_TIMEZONE,
     attemptsAllowed: null,
     answerPoolSize: getAnswerPool().length,
-    answerType: answer.type
+    answerType: answer.type,
+    gameNumber: getGameNumber(gameDate)
   };
 }
