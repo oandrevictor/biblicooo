@@ -1,0 +1,2787 @@
+[
+  {
+    "id": "adam",
+    "slug": "adao",
+    "name": "Adão",
+    "aliases": [],
+    "type": "character",
+    "testament": "old",
+    "gender": "male",
+    "primaryRole": "family_member",
+    "roleTags": [
+      "ancestor"
+    ],
+    "era": "origins",
+    "firstAppearance": {
+      "book": "Genesis",
+      "chapter": 2,
+      "verse": 19,
+      "order": 1002019
+    },
+    "books": [
+      "Genesis",
+      "Romanos",
+      "1 Corintios"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      },
+      {
+        "name": "Curadoria de papeis Biblicooo",
+        "id": "data/curation/character-roles.json"
+      },
+      {
+        "name": "Wikidata",
+        "id": "Q70899",
+        "url": "http://www.wikidata.org/entity/Q70899"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "eva",
+    "slug": "eva",
+    "name": "Eva",
+    "aliases": [],
+    "type": "character",
+    "testament": "old",
+    "gender": "female",
+    "primaryRole": "family_member",
+    "roleTags": [
+      "ancestor"
+    ],
+    "era": "origins",
+    "firstAppearance": {
+      "book": "Genesis",
+      "chapter": 3,
+      "verse": 20,
+      "order": 1003020
+    },
+    "books": [
+      "Genesis",
+      "2 Corintios",
+      "1 Timoteo"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      },
+      {
+        "name": "Curadoria de papeis Biblicooo",
+        "id": "data/curation/character-roles.json"
+      },
+      {
+        "name": "Wikidata",
+        "id": "Q830183",
+        "url": "http://www.wikidata.org/entity/Q830183"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "noe",
+    "slug": "noe",
+    "name": "Noé",
+    "aliases": [],
+    "type": "character",
+    "testament": "old",
+    "gender": "male",
+    "primaryRole": "patriarch_matriarch",
+    "roleTags": [
+      "ancestor"
+    ],
+    "era": "origins",
+    "firstAppearance": {
+      "book": "Genesis",
+      "chapter": 5,
+      "verse": 29,
+      "order": 1005029
+    },
+    "books": [
+      "Genesis",
+      "Hebreus",
+      "1 Pedro"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      },
+      {
+        "name": "Curadoria de papeis Biblicooo",
+        "id": "data/curation/character-roles.json"
+      },
+      {
+        "name": "Wikidata",
+        "id": "Q81422",
+        "url": "http://www.wikidata.org/entity/Q81422"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "abraao",
+    "slug": "abraao",
+    "name": "Abraão",
+    "aliases": [
+      "Abrão",
+      "Abram"
+    ],
+    "type": "character",
+    "testament": "old",
+    "gender": "male",
+    "primaryRole": "patriarch_matriarch",
+    "roleTags": [
+      "covenant"
+    ],
+    "era": "patriarchs",
+    "firstAppearance": {
+      "book": "Genesis",
+      "chapter": 11,
+      "verse": 26,
+      "order": 1011026
+    },
+    "books": [
+      "Genesis",
+      "Mateus",
+      "Romanos",
+      "Hebreus"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      },
+      {
+        "name": "Curadoria de papeis Biblicooo",
+        "id": "data/curation/character-roles.json"
+      },
+      {
+        "name": "Wikidata",
+        "id": "Q9181",
+        "url": "http://www.wikidata.org/entity/Q9181"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "sara",
+    "slug": "sara",
+    "name": "Sara",
+    "aliases": [
+      "Sarai"
+    ],
+    "type": "character",
+    "testament": "old",
+    "gender": "female",
+    "primaryRole": "patriarch_matriarch",
+    "roleTags": [
+      "covenant"
+    ],
+    "era": "patriarchs",
+    "firstAppearance": {
+      "book": "Genesis",
+      "chapter": 11,
+      "verse": 29,
+      "order": 1011029
+    },
+    "books": [
+      "Genesis",
+      "Romanos",
+      "Hebreus",
+      "1 Pedro"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      },
+      {
+        "name": "Curadoria de papeis Biblicooo",
+        "id": "data/curation/character-roles.json"
+      },
+      {
+        "name": "Wikidata",
+        "id": "Q833345",
+        "url": "http://www.wikidata.org/entity/Q833345"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "lo",
+    "slug": "lo",
+    "name": "Ló",
+    "aliases": [
+      "Lot"
+    ],
+    "type": "character",
+    "testament": "old",
+    "gender": "male",
+    "primaryRole": "family_member",
+    "roleTags": [],
+    "era": "patriarchs",
+    "firstAppearance": {
+      "book": "Genesis",
+      "chapter": 11,
+      "verse": 27,
+      "order": 1011027
+    },
+    "books": [
+      "Genesis",
+      "Lucas",
+      "2 Pedro"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      },
+      {
+        "name": "Curadoria de papeis Biblicooo",
+        "id": "data/curation/character-roles.json"
+      },
+      {
+        "name": "Wikidata",
+        "id": "Q40574",
+        "url": "http://www.wikidata.org/entity/Q40574"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "isaque",
+    "slug": "isaque",
+    "name": "Isaque",
+    "aliases": [
+      "Isaac"
+    ],
+    "type": "character",
+    "testament": "old",
+    "gender": "male",
+    "primaryRole": "patriarch_matriarch",
+    "roleTags": [
+      "covenant"
+    ],
+    "era": "patriarchs",
+    "firstAppearance": {
+      "book": "Genesis",
+      "chapter": 17,
+      "verse": 19,
+      "order": 1017019
+    },
+    "books": [
+      "Genesis",
+      "Mateus",
+      "Romanos",
+      "Hebreus"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      },
+      {
+        "name": "Curadoria de papeis Biblicooo",
+        "id": "data/curation/character-roles.json"
+      },
+      {
+        "name": "Wikidata",
+        "id": "Q6075789",
+        "url": "http://www.wikidata.org/entity/Q6075789"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "rebeca",
+    "slug": "rebeca",
+    "name": "Rebeca",
+    "aliases": [],
+    "type": "character",
+    "testament": "old",
+    "gender": "female",
+    "primaryRole": "patriarch_matriarch",
+    "roleTags": [
+      "covenant"
+    ],
+    "era": "patriarchs",
+    "firstAppearance": {
+      "book": "Genesis",
+      "chapter": 22,
+      "verse": 23,
+      "order": 1022023
+    },
+    "books": [
+      "Genesis",
+      "Romanos"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      },
+      {
+        "name": "Curadoria de papeis Biblicooo",
+        "id": "data/curation/character-roles.json"
+      },
+      {
+        "name": "Wikidata",
+        "id": "Q40520",
+        "url": "http://www.wikidata.org/entity/Q40520"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "jaco",
+    "slug": "jaco",
+    "name": "Jacó",
+    "aliases": [
+      "Israel"
+    ],
+    "type": "character",
+    "testament": "old",
+    "gender": "male",
+    "primaryRole": "patriarch_matriarch",
+    "roleTags": [
+      "covenant"
+    ],
+    "era": "patriarchs",
+    "firstAppearance": {
+      "book": "Genesis",
+      "chapter": 25,
+      "verse": 26,
+      "order": 1025026
+    },
+    "books": [
+      "Genesis",
+      "Mateus",
+      "Romanos",
+      "Hebreus"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      },
+      {
+        "name": "Curadoria de papeis Biblicooo",
+        "id": "data/curation/character-roles.json"
+      },
+      {
+        "name": "Wikidata",
+        "id": "Q289957",
+        "url": "http://www.wikidata.org/entity/Q289957"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "raquel",
+    "slug": "raquel",
+    "name": "Raquel",
+    "aliases": [],
+    "type": "character",
+    "testament": "old",
+    "gender": "female",
+    "primaryRole": "patriarch_matriarch",
+    "roleTags": [],
+    "era": "patriarchs",
+    "firstAppearance": {
+      "book": "Genesis",
+      "chapter": 29,
+      "verse": 6,
+      "order": 1029006
+    },
+    "books": [
+      "Genesis",
+      "Jeremias",
+      "Mateus"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      },
+      {
+        "name": "Curadoria de papeis Biblicooo",
+        "id": "data/curation/character-roles.json"
+      },
+      {
+        "name": "Wikidata",
+        "id": "Q207389",
+        "url": "http://www.wikidata.org/entity/Q207389"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "jose",
+    "slug": "jose",
+    "name": "Jose",
+    "aliases": [
+      "Jose do Egito"
+    ],
+    "type": "character",
+    "testament": "old",
+    "gender": "male",
+    "primaryRole": "other",
+    "roleTags": [
+      "exile_official",
+      "dream_interpreter"
+    ],
+    "era": "patriarchs",
+    "firstAppearance": {
+      "book": "Genesis",
+      "chapter": 30,
+      "verse": 24,
+      "order": 1030024
+    },
+    "books": [
+      "Genesis",
+      "Exodo",
+      "Atos",
+      "Hebreus"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      },
+      {
+        "name": "Curadoria de papeis Biblicooo",
+        "id": "data/curation/character-roles.json"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "moises",
+    "slug": "moises",
+    "name": "Moises",
+    "aliases": [],
+    "type": "character",
+    "testament": "old",
+    "gender": "male",
+    "primaryRole": "prophet",
+    "roleTags": [
+      "leader",
+      "lawgiver"
+    ],
+    "era": "exodus",
+    "firstAppearance": {
+      "book": "Exodo",
+      "chapter": 2,
+      "verse": 10,
+      "order": 2002010
+    },
+    "books": [
+      "Exodo",
+      "Numeros",
+      "Deuteronomio",
+      "Mateus",
+      "Hebreus"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      },
+      {
+        "name": "Curadoria de papeis Biblicooo",
+        "id": "data/curation/character-roles.json"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "miria",
+    "slug": "miriam",
+    "name": "Miriam",
+    "aliases": [
+      "Miriã",
+      "Maria irma de Moises"
+    ],
+    "type": "character",
+    "testament": "old",
+    "gender": "female",
+    "primaryRole": "prophet",
+    "roleTags": [
+      "worship_leader"
+    ],
+    "era": "exodus",
+    "firstAppearance": {
+      "book": "Exodo",
+      "chapter": 15,
+      "verse": 20,
+      "order": 2015020
+    },
+    "books": [
+      "Exodo",
+      "Numeros",
+      "Miqueias"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      },
+      {
+        "name": "Curadoria de papeis Biblicooo",
+        "id": "data/curation/character-roles.json"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "arao",
+    "slug": "arao",
+    "name": "Arao",
+    "aliases": [],
+    "type": "character",
+    "testament": "old",
+    "gender": "male",
+    "primaryRole": "priest_levite",
+    "roleTags": [
+      "leader"
+    ],
+    "era": "exodus",
+    "firstAppearance": {
+      "book": "Exodo",
+      "chapter": 4,
+      "verse": 14,
+      "order": 2004014
+    },
+    "books": [
+      "Exodo",
+      "Levitico",
+      "Numeros",
+      "Hebreus"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      },
+      {
+        "name": "Curadoria de papeis Biblicooo",
+        "id": "data/curation/character-roles.json"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "josue",
+    "slug": "josue",
+    "name": "Josue",
+    "aliases": [],
+    "type": "character",
+    "testament": "old",
+    "gender": "male",
+    "primaryRole": "judge_deliverer",
+    "roleTags": [
+      "leader",
+      "military_leader"
+    ],
+    "era": "conquest",
+    "firstAppearance": {
+      "book": "Exodo",
+      "chapter": 17,
+      "verse": 9,
+      "order": 2017009
+    },
+    "books": [
+      "Exodo",
+      "Numeros",
+      "Deuteronomio",
+      "Josue",
+      "Hebreus"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      },
+      {
+        "name": "Curadoria de papeis Biblicooo",
+        "id": "data/curation/character-roles.json"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "calebe",
+    "slug": "calebe",
+    "name": "Calebe",
+    "aliases": [
+      "Caleb"
+    ],
+    "type": "character",
+    "testament": "old",
+    "gender": "male",
+    "primaryRole": "other",
+    "roleTags": [
+      "spy",
+      "military_leader"
+    ],
+    "era": "conquest",
+    "firstAppearance": {
+      "book": "Numeros",
+      "chapter": 13,
+      "verse": 6,
+      "order": 4013006
+    },
+    "books": [
+      "Numeros",
+      "Josue",
+      "Juizes"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      },
+      {
+        "name": "Curadoria de papeis Biblicooo",
+        "id": "data/curation/character-roles.json"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "raabe",
+    "slug": "raabe",
+    "name": "Raabe",
+    "aliases": [
+      "Rahab"
+    ],
+    "type": "character",
+    "testament": "old",
+    "gender": "female",
+    "primaryRole": "other",
+    "roleTags": [
+      "gentile",
+      "ancestor"
+    ],
+    "era": "conquest",
+    "firstAppearance": {
+      "book": "Josue",
+      "chapter": 2,
+      "verse": 1,
+      "order": 6002001
+    },
+    "books": [
+      "Josue",
+      "Mateus",
+      "Hebreus",
+      "Tiago"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      },
+      {
+        "name": "Curadoria de papeis Biblicooo",
+        "id": "data/curation/character-roles.json"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "debora",
+    "slug": "debora",
+    "name": "Debora",
+    "aliases": [],
+    "type": "character",
+    "testament": "old",
+    "gender": "female",
+    "primaryRole": "judge_deliverer",
+    "roleTags": [
+      "prophet"
+    ],
+    "era": "judges",
+    "firstAppearance": {
+      "book": "Juizes",
+      "chapter": 4,
+      "verse": 4,
+      "order": 7004004
+    },
+    "books": [
+      "Juizes"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      },
+      {
+        "name": "Curadoria de papeis Biblicooo",
+        "id": "data/curation/character-roles.json"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "gideao",
+    "slug": "gideao",
+    "name": "Gideao",
+    "aliases": [
+      "Jerubaal"
+    ],
+    "type": "character",
+    "testament": "old",
+    "gender": "male",
+    "primaryRole": "judge_deliverer",
+    "roleTags": [
+      "military_leader"
+    ],
+    "era": "judges",
+    "firstAppearance": {
+      "book": "Juizes",
+      "chapter": 6,
+      "verse": 11,
+      "order": 7006011
+    },
+    "books": [
+      "Juizes",
+      "Hebreus"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      },
+      {
+        "name": "Curadoria de papeis Biblicooo",
+        "id": "data/curation/character-roles.json"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "sansao",
+    "slug": "sansao",
+    "name": "Sansao",
+    "aliases": [],
+    "type": "character",
+    "testament": "old",
+    "gender": "male",
+    "primaryRole": "judge_deliverer",
+    "roleTags": [],
+    "era": "judges",
+    "firstAppearance": {
+      "book": "Juizes",
+      "chapter": 13,
+      "verse": 24,
+      "order": 7013024
+    },
+    "books": [
+      "Juizes",
+      "Hebreus"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      },
+      {
+        "name": "Curadoria de papeis Biblicooo",
+        "id": "data/curation/character-roles.json"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "rute",
+    "slug": "rute",
+    "name": "Rute",
+    "aliases": [
+      "Ruth"
+    ],
+    "type": "character",
+    "testament": "old",
+    "gender": "female",
+    "primaryRole": "family_member",
+    "roleTags": [
+      "gentile",
+      "ancestor"
+    ],
+    "era": "judges",
+    "firstAppearance": {
+      "book": "Rute",
+      "chapter": 1,
+      "verse": 4,
+      "order": 8001004
+    },
+    "books": [
+      "Rute",
+      "Mateus"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      },
+      {
+        "name": "Curadoria de papeis Biblicooo",
+        "id": "data/curation/character-roles.json"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "samuel",
+    "slug": "samuel",
+    "name": "Samuel",
+    "aliases": [],
+    "type": "character",
+    "testament": "old",
+    "gender": "male",
+    "primaryRole": "prophet",
+    "roleTags": [
+      "judge"
+    ],
+    "era": "monarchy",
+    "firstAppearance": {
+      "book": "1 Samuel",
+      "chapter": 1,
+      "verse": 20,
+      "order": 9001020
+    },
+    "books": [
+      "1 Samuel",
+      "1 Cronicas",
+      "Atos",
+      "Hebreus"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      },
+      {
+        "name": "Curadoria de papeis Biblicooo",
+        "id": "data/curation/character-roles.json"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "saul",
+    "slug": "saul",
+    "name": "Saul",
+    "aliases": [
+      "Saul rei de Israel"
+    ],
+    "type": "character",
+    "testament": "old",
+    "gender": "male",
+    "primaryRole": "monarch",
+    "roleTags": [],
+    "era": "monarchy",
+    "firstAppearance": {
+      "book": "1 Samuel",
+      "chapter": 9,
+      "verse": 2,
+      "order": 9009002
+    },
+    "books": [
+      "1 Samuel",
+      "2 Samuel",
+      "1 Cronicas",
+      "Atos"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      },
+      {
+        "name": "Curadoria de papeis Biblicooo",
+        "id": "data/curation/character-roles.json"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "davi",
+    "slug": "davi",
+    "name": "Davi",
+    "aliases": [
+      "David"
+    ],
+    "type": "character",
+    "testament": "old",
+    "gender": "male",
+    "primaryRole": "monarch",
+    "roleTags": [
+      "psalmist",
+      "warrior"
+    ],
+    "era": "monarchy",
+    "firstAppearance": {
+      "book": "1 Samuel",
+      "chapter": 16,
+      "verse": 13,
+      "order": 9016013
+    },
+    "books": [
+      "1 Samuel",
+      "2 Samuel",
+      "1 Reis",
+      "Mateus",
+      "Atos"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      },
+      {
+        "name": "Curadoria de papeis Biblicooo",
+        "id": "data/curation/character-roles.json"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "betsabe",
+    "slug": "bate-seba",
+    "name": "Bate-Seba",
+    "aliases": [
+      "Bateseba",
+      "Betsabe"
+    ],
+    "type": "character",
+    "testament": "old",
+    "gender": "female",
+    "primaryRole": "family_member",
+    "roleTags": [
+      "queen_mother"
+    ],
+    "era": "monarchy",
+    "firstAppearance": {
+      "book": "2 Samuel",
+      "chapter": 11,
+      "verse": 3,
+      "order": 10011003
+    },
+    "books": [
+      "2 Samuel",
+      "1 Reis",
+      "1 Cronicas",
+      "Mateus"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      },
+      {
+        "name": "Curadoria de papeis Biblicooo",
+        "id": "data/curation/character-roles.json"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "salomao",
+    "slug": "salomao",
+    "name": "Salomao",
+    "aliases": [],
+    "type": "character",
+    "testament": "old",
+    "gender": "male",
+    "primaryRole": "monarch",
+    "roleTags": [
+      "wisdom_teacher"
+    ],
+    "era": "monarchy",
+    "firstAppearance": {
+      "book": "2 Samuel",
+      "chapter": 12,
+      "verse": 24,
+      "order": 10012024
+    },
+    "books": [
+      "2 Samuel",
+      "1 Reis",
+      "2 Cronicas",
+      "Mateus"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      },
+      {
+        "name": "Curadoria de papeis Biblicooo",
+        "id": "data/curation/character-roles.json"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "elias",
+    "slug": "elias",
+    "name": "Elias",
+    "aliases": [],
+    "type": "character",
+    "testament": "old",
+    "gender": "male",
+    "primaryRole": "prophet",
+    "roleTags": [],
+    "era": "monarchy",
+    "firstAppearance": {
+      "book": "1 Reis",
+      "chapter": 17,
+      "verse": 1,
+      "order": 11017001
+    },
+    "books": [
+      "1 Reis",
+      "2 Reis",
+      "Mateus",
+      "Tiago"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      },
+      {
+        "name": "Curadoria de papeis Biblicooo",
+        "id": "data/curation/character-roles.json"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "eliseu",
+    "slug": "eliseu",
+    "name": "Eliseu",
+    "aliases": [],
+    "type": "character",
+    "testament": "old",
+    "gender": "male",
+    "primaryRole": "prophet",
+    "roleTags": [],
+    "era": "monarchy",
+    "firstAppearance": {
+      "book": "1 Reis",
+      "chapter": 19,
+      "verse": 16,
+      "order": 11019016
+    },
+    "books": [
+      "1 Reis",
+      "2 Reis",
+      "Lucas"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      },
+      {
+        "name": "Curadoria de papeis Biblicooo",
+        "id": "data/curation/character-roles.json"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "jezabel",
+    "slug": "jezabel",
+    "name": "Jezabel",
+    "aliases": [],
+    "type": "character",
+    "testament": "old",
+    "gender": "female",
+    "primaryRole": "political_ruler",
+    "roleTags": [
+      "opponent",
+      "queen"
+    ],
+    "era": "monarchy",
+    "firstAppearance": {
+      "book": "1 Reis",
+      "chapter": 16,
+      "verse": 31,
+      "order": 11016031
+    },
+    "books": [
+      "1 Reis",
+      "2 Reis",
+      "Apocalipse"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      },
+      {
+        "name": "Curadoria de papeis Biblicooo",
+        "id": "data/curation/character-roles.json"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "isaias",
+    "slug": "isaias",
+    "name": "Isaias",
+    "aliases": [],
+    "type": "character",
+    "testament": "old",
+    "gender": "male",
+    "primaryRole": "prophet",
+    "roleTags": [],
+    "era": "monarchy",
+    "firstAppearance": {
+      "book": "2 Reis",
+      "chapter": 19,
+      "verse": 2,
+      "order": 12019002
+    },
+    "books": [
+      "2 Reis",
+      "Isaias",
+      "Mateus",
+      "Romanos"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      },
+      {
+        "name": "Curadoria de papeis Biblicooo",
+        "id": "data/curation/character-roles.json"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "jeremias",
+    "slug": "jeremias",
+    "name": "Jeremias",
+    "aliases": [],
+    "type": "character",
+    "testament": "old",
+    "gender": "male",
+    "primaryRole": "prophet",
+    "roleTags": [],
+    "era": "exile",
+    "firstAppearance": {
+      "book": "Jeremias",
+      "chapter": 1,
+      "verse": 1,
+      "order": 24001001
+    },
+    "books": [
+      "Jeremias",
+      "Daniel",
+      "Mateus"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      },
+      {
+        "name": "Curadoria de papeis Biblicooo",
+        "id": "data/curation/character-roles.json"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "ezequiel",
+    "slug": "ezequiel",
+    "name": "Ezequiel",
+    "aliases": [],
+    "type": "character",
+    "testament": "old",
+    "gender": "male",
+    "primaryRole": "prophet",
+    "roleTags": [
+      "priest"
+    ],
+    "era": "exile",
+    "firstAppearance": {
+      "book": "Ezequiel",
+      "chapter": 1,
+      "verse": 3,
+      "order": 26001003
+    },
+    "books": [
+      "Ezequiel"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      },
+      {
+        "name": "Curadoria de papeis Biblicooo",
+        "id": "data/curation/character-roles.json"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "daniel",
+    "slug": "daniel",
+    "name": "Daniel",
+    "aliases": [
+      "Beltessazar"
+    ],
+    "type": "character",
+    "testament": "old",
+    "gender": "male",
+    "primaryRole": "prophet",
+    "roleTags": [
+      "exile_official"
+    ],
+    "era": "exile",
+    "firstAppearance": {
+      "book": "Daniel",
+      "chapter": 1,
+      "verse": 6,
+      "order": 27001006
+    },
+    "books": [
+      "Daniel",
+      "Mateus",
+      "Hebreus"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      },
+      {
+        "name": "Curadoria de papeis Biblicooo",
+        "id": "data/curation/character-roles.json"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "ester",
+    "slug": "ester",
+    "name": "Ester",
+    "aliases": [
+      "Hadassa"
+    ],
+    "type": "character",
+    "testament": "old",
+    "gender": "female",
+    "primaryRole": "political_ruler",
+    "roleTags": [
+      "queen",
+      "deliverer"
+    ],
+    "era": "exile",
+    "firstAppearance": {
+      "book": "Ester",
+      "chapter": 2,
+      "verse": 7,
+      "order": 17002007
+    },
+    "books": [
+      "Ester"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      },
+      {
+        "name": "Curadoria de papeis Biblicooo",
+        "id": "data/curation/character-roles.json"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "esdras",
+    "slug": "esdras",
+    "name": "Esdras",
+    "aliases": [],
+    "type": "character",
+    "testament": "old",
+    "gender": "male",
+    "primaryRole": "priest_levite",
+    "roleTags": [
+      "scribe",
+      "teacher"
+    ],
+    "era": "return",
+    "firstAppearance": {
+      "book": "Esdras",
+      "chapter": 7,
+      "verse": 1,
+      "order": 15007001
+    },
+    "books": [
+      "Esdras",
+      "Neemias"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      },
+      {
+        "name": "Curadoria de papeis Biblicooo",
+        "id": "data/curation/character-roles.json"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "neemias",
+    "slug": "neemias",
+    "name": "Neemias",
+    "aliases": [],
+    "type": "character",
+    "testament": "old",
+    "gender": "male",
+    "primaryRole": "political_ruler",
+    "roleTags": [
+      "governor",
+      "reformer"
+    ],
+    "era": "return",
+    "firstAppearance": {
+      "book": "Neemias",
+      "chapter": 1,
+      "verse": 1,
+      "order": 16001001
+    },
+    "books": [
+      "Neemias"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      },
+      {
+        "name": "Curadoria de papeis Biblicooo",
+        "id": "data/curation/character-roles.json"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "jonas",
+    "slug": "jonas",
+    "name": "Jonas",
+    "aliases": [],
+    "type": "character",
+    "testament": "old",
+    "gender": "male",
+    "primaryRole": "prophet",
+    "roleTags": [],
+    "era": "monarchy",
+    "firstAppearance": {
+      "book": "2 Reis",
+      "chapter": 14,
+      "verse": 25,
+      "order": 12014025
+    },
+    "books": [
+      "2 Reis",
+      "Jonas",
+      "Mateus"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      },
+      {
+        "name": "Curadoria de papeis Biblicooo",
+        "id": "data/curation/character-roles.json"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "maria-mae-de-jesus",
+    "slug": "maria",
+    "name": "Maria",
+    "aliases": [
+      "Maria mae de Jesus"
+    ],
+    "type": "character",
+    "testament": "new",
+    "gender": "female",
+    "primaryRole": "family_member",
+    "roleTags": [
+      "disciple"
+    ],
+    "era": "jesus",
+    "firstAppearance": {
+      "book": "Mateus",
+      "chapter": 1,
+      "verse": 16,
+      "order": 40001016
+    },
+    "books": [
+      "Mateus",
+      "Marcos",
+      "Lucas",
+      "Joao",
+      "Atos"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      },
+      {
+        "name": "Curadoria de papeis Biblicooo",
+        "id": "data/curation/character-roles.json"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "jose-pai-terreno",
+    "slug": "jose-de-nazare",
+    "name": "Jose de Nazare",
+    "aliases": [
+      "Jose esposo de Maria"
+    ],
+    "type": "character",
+    "testament": "new",
+    "gender": "male",
+    "primaryRole": "family_member",
+    "roleTags": [],
+    "era": "jesus",
+    "firstAppearance": {
+      "book": "Mateus",
+      "chapter": 1,
+      "verse": 16,
+      "order": 40001016
+    },
+    "books": [
+      "Mateus",
+      "Lucas",
+      "Joao"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      },
+      {
+        "name": "Curadoria de papeis Biblicooo",
+        "id": "data/curation/character-roles.json"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "jesus",
+    "slug": "jesus",
+    "name": "Jesus",
+    "aliases": [
+      "Cristo",
+      "Jesus Cristo"
+    ],
+    "type": "character",
+    "testament": "new",
+    "gender": "male",
+    "primaryRole": "other",
+    "roleTags": [
+      "messiah",
+      "teacher"
+    ],
+    "era": "jesus",
+    "firstAppearance": {
+      "book": "Mateus",
+      "chapter": 1,
+      "verse": 1,
+      "order": 40001001
+    },
+    "books": [
+      "Mateus",
+      "Marcos",
+      "Lucas",
+      "Joao",
+      "Atos",
+      "Romanos",
+      "Apocalipse"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      },
+      {
+        "name": "Curadoria de papeis Biblicooo",
+        "id": "data/curation/character-roles.json"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "joao-batista",
+    "slug": "joao-batista",
+    "name": "Joao Batista",
+    "aliases": [],
+    "type": "character",
+    "testament": "new",
+    "gender": "male",
+    "primaryRole": "prophet",
+    "roleTags": [
+      "forerunner"
+    ],
+    "era": "jesus",
+    "firstAppearance": {
+      "book": "Mateus",
+      "chapter": 3,
+      "verse": 1,
+      "order": 40003001
+    },
+    "books": [
+      "Mateus",
+      "Marcos",
+      "Lucas",
+      "Joao",
+      "Atos"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      },
+      {
+        "name": "Curadoria de papeis Biblicooo",
+        "id": "data/curation/character-roles.json"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "pedro",
+    "slug": "pedro",
+    "name": "Pedro",
+    "aliases": [
+      "Simao Pedro",
+      "Cefas"
+    ],
+    "type": "character",
+    "testament": "new",
+    "gender": "male",
+    "primaryRole": "apostle",
+    "roleTags": [
+      "church_leader"
+    ],
+    "era": "jesus",
+    "firstAppearance": {
+      "book": "Mateus",
+      "chapter": 4,
+      "verse": 18,
+      "order": 40004018
+    },
+    "books": [
+      "Mateus",
+      "Marcos",
+      "Lucas",
+      "Joao",
+      "Atos",
+      "Galatas"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      },
+      {
+        "name": "Curadoria de papeis Biblicooo",
+        "id": "data/curation/character-roles.json"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "andre",
+    "slug": "andre",
+    "name": "Andre",
+    "aliases": [],
+    "type": "character",
+    "testament": "new",
+    "gender": "male",
+    "primaryRole": "apostle",
+    "roleTags": [],
+    "era": "jesus",
+    "firstAppearance": {
+      "book": "Mateus",
+      "chapter": 4,
+      "verse": 18,
+      "order": 40004018
+    },
+    "books": [
+      "Mateus",
+      "Marcos",
+      "Lucas",
+      "Joao",
+      "Atos"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      },
+      {
+        "name": "Curadoria de papeis Biblicooo",
+        "id": "data/curation/character-roles.json"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "tiago-filho-zebedeu",
+    "slug": "tiago",
+    "name": "Tiago",
+    "aliases": [
+      "Tiago filho de Zebedeu"
+    ],
+    "type": "character",
+    "testament": "new",
+    "gender": "male",
+    "primaryRole": "apostle",
+    "roleTags": [],
+    "era": "jesus",
+    "firstAppearance": {
+      "book": "Mateus",
+      "chapter": 4,
+      "verse": 21,
+      "order": 40004021
+    },
+    "books": [
+      "Mateus",
+      "Marcos",
+      "Lucas",
+      "Atos"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      },
+      {
+        "name": "Curadoria de papeis Biblicooo",
+        "id": "data/curation/character-roles.json"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "joao-apostolo",
+    "slug": "joao",
+    "name": "Joao",
+    "aliases": [
+      "Joao apostolo"
+    ],
+    "type": "character",
+    "testament": "new",
+    "gender": "male",
+    "primaryRole": "apostle",
+    "roleTags": [
+      "writer"
+    ],
+    "era": "jesus",
+    "firstAppearance": {
+      "book": "Mateus",
+      "chapter": 4,
+      "verse": 21,
+      "order": 40004021
+    },
+    "books": [
+      "Mateus",
+      "Marcos",
+      "Lucas",
+      "Joao",
+      "Atos",
+      "Apocalipse"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      },
+      {
+        "name": "Curadoria de papeis Biblicooo",
+        "id": "data/curation/character-roles.json"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "marta",
+    "slug": "marta",
+    "name": "Marta",
+    "aliases": [],
+    "type": "character",
+    "testament": "new",
+    "gender": "female",
+    "primaryRole": "disciple_follower",
+    "roleTags": [],
+    "era": "jesus",
+    "firstAppearance": {
+      "book": "Lucas",
+      "chapter": 10,
+      "verse": 38,
+      "order": 42010038
+    },
+    "books": [
+      "Lucas",
+      "Joao"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      },
+      {
+        "name": "Curadoria de papeis Biblicooo",
+        "id": "data/curation/character-roles.json"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "maria-de-betania",
+    "slug": "maria-de-betania",
+    "name": "Maria de Betania",
+    "aliases": [],
+    "type": "character",
+    "testament": "new",
+    "gender": "female",
+    "primaryRole": "disciple_follower",
+    "roleTags": [],
+    "era": "jesus",
+    "firstAppearance": {
+      "book": "Lucas",
+      "chapter": 10,
+      "verse": 39,
+      "order": 42010039
+    },
+    "books": [
+      "Lucas",
+      "Joao"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      },
+      {
+        "name": "Curadoria de papeis Biblicooo",
+        "id": "data/curation/character-roles.json"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "lazaro",
+    "slug": "lazaro",
+    "name": "Lazaro",
+    "aliases": [],
+    "type": "character",
+    "testament": "new",
+    "gender": "male",
+    "primaryRole": "family_member",
+    "roleTags": [
+      "witness"
+    ],
+    "era": "jesus",
+    "firstAppearance": {
+      "book": "Lucas",
+      "chapter": 16,
+      "verse": 20,
+      "order": 42016020
+    },
+    "books": [
+      "Lucas",
+      "Joao"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      },
+      {
+        "name": "Curadoria de papeis Biblicooo",
+        "id": "data/curation/character-roles.json"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "maria-madalena",
+    "slug": "maria-madalena",
+    "name": "Maria Madalena",
+    "aliases": [
+      "Maria Magdalena"
+    ],
+    "type": "character",
+    "testament": "new",
+    "gender": "female",
+    "primaryRole": "disciple_follower",
+    "roleTags": [
+      "witness"
+    ],
+    "era": "jesus",
+    "firstAppearance": {
+      "book": "Mateus",
+      "chapter": 27,
+      "verse": 56,
+      "order": 40027056
+    },
+    "books": [
+      "Mateus",
+      "Marcos",
+      "Lucas",
+      "Joao"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      },
+      {
+        "name": "Curadoria de papeis Biblicooo",
+        "id": "data/curation/character-roles.json"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "judas-iscariotes",
+    "slug": "judas-iscariotes",
+    "name": "Judas Iscariotes",
+    "aliases": [
+      "Judas"
+    ],
+    "type": "character",
+    "testament": "new",
+    "gender": "male",
+    "primaryRole": "opponent",
+    "roleTags": [
+      "apostle"
+    ],
+    "era": "jesus",
+    "firstAppearance": {
+      "book": "Mateus",
+      "chapter": 10,
+      "verse": 4,
+      "order": 40010004
+    },
+    "books": [
+      "Mateus",
+      "Marcos",
+      "Lucas",
+      "Joao",
+      "Atos"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      },
+      {
+        "name": "Curadoria de papeis Biblicooo",
+        "id": "data/curation/character-roles.json"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "paulo",
+    "slug": "paulo",
+    "name": "Paulo",
+    "aliases": [
+      "Saulo",
+      "Paulo de Tarso"
+    ],
+    "type": "character",
+    "testament": "new",
+    "gender": "male",
+    "primaryRole": "apostle",
+    "roleTags": [
+      "missionary",
+      "church_leader"
+    ],
+    "era": "early_church",
+    "firstAppearance": {
+      "book": "Atos",
+      "chapter": 7,
+      "verse": 58,
+      "order": 44007058
+    },
+    "books": [
+      "Atos",
+      "Romanos",
+      "1 Corintios",
+      "Galatas",
+      "2 Timoteo"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      },
+      {
+        "name": "Curadoria de papeis Biblicooo",
+        "id": "data/curation/character-roles.json"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "barnabe",
+    "slug": "barnabe",
+    "name": "Barnabe",
+    "aliases": [
+      "Jose chamado Barnabe"
+    ],
+    "type": "character",
+    "testament": "new",
+    "gender": "male",
+    "primaryRole": "church_leader_missionary",
+    "roleTags": [
+      "missionary"
+    ],
+    "era": "early_church",
+    "firstAppearance": {
+      "book": "Atos",
+      "chapter": 4,
+      "verse": 36,
+      "order": 44004036
+    },
+    "books": [
+      "Atos",
+      "1 Corintios",
+      "Galatas",
+      "Colossenses"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      },
+      {
+        "name": "Curadoria de papeis Biblicooo",
+        "id": "data/curation/character-roles.json"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "estevao",
+    "slug": "estevao",
+    "name": "Estevao",
+    "aliases": [],
+    "type": "character",
+    "testament": "new",
+    "gender": "male",
+    "primaryRole": "church_leader_missionary",
+    "roleTags": [
+      "martyr",
+      "deacon"
+    ],
+    "era": "early_church",
+    "firstAppearance": {
+      "book": "Atos",
+      "chapter": 6,
+      "verse": 5,
+      "order": 44006005
+    },
+    "books": [
+      "Atos"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      },
+      {
+        "name": "Curadoria de papeis Biblicooo",
+        "id": "data/curation/character-roles.json"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "filipe",
+    "slug": "filipe",
+    "name": "Filipe",
+    "aliases": [
+      "Filipe evangelista"
+    ],
+    "type": "character",
+    "testament": "new",
+    "gender": "male",
+    "primaryRole": "church_leader_missionary",
+    "roleTags": [
+      "evangelist",
+      "deacon"
+    ],
+    "era": "early_church",
+    "firstAppearance": {
+      "book": "Atos",
+      "chapter": 6,
+      "verse": 5,
+      "order": 44006005
+    },
+    "books": [
+      "Atos"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      },
+      {
+        "name": "Curadoria de papeis Biblicooo",
+        "id": "data/curation/character-roles.json"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "priscila",
+    "slug": "priscila",
+    "name": "Priscila",
+    "aliases": [
+      "Prisca"
+    ],
+    "type": "character",
+    "testament": "new",
+    "gender": "female",
+    "primaryRole": "church_leader_missionary",
+    "roleTags": [
+      "teacher"
+    ],
+    "era": "early_church",
+    "firstAppearance": {
+      "book": "Atos",
+      "chapter": 18,
+      "verse": 2,
+      "order": 44018002
+    },
+    "books": [
+      "Atos",
+      "Romanos",
+      "1 Corintios",
+      "2 Timoteo"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      },
+      {
+        "name": "Curadoria de papeis Biblicooo",
+        "id": "data/curation/character-roles.json"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "aquila",
+    "slug": "aquila",
+    "name": "Aquila",
+    "aliases": [],
+    "type": "character",
+    "testament": "new",
+    "gender": "male",
+    "primaryRole": "church_leader_missionary",
+    "roleTags": [
+      "teacher"
+    ],
+    "era": "early_church",
+    "firstAppearance": {
+      "book": "Atos",
+      "chapter": 18,
+      "verse": 2,
+      "order": 44018002
+    },
+    "books": [
+      "Atos",
+      "Romanos",
+      "1 Corintios",
+      "2 Timoteo"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      },
+      {
+        "name": "Curadoria de papeis Biblicooo",
+        "id": "data/curation/character-roles.json"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "timoteo",
+    "slug": "timoteo",
+    "name": "Timoteo",
+    "aliases": [],
+    "type": "character",
+    "testament": "new",
+    "gender": "male",
+    "primaryRole": "church_leader_missionary",
+    "roleTags": [
+      "pastor",
+      "missionary"
+    ],
+    "era": "early_church",
+    "firstAppearance": {
+      "book": "Atos",
+      "chapter": 16,
+      "verse": 1,
+      "order": 44016001
+    },
+    "books": [
+      "Atos",
+      "Romanos",
+      "1 Corintios",
+      "1 Timoteo",
+      "2 Timoteo"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      },
+      {
+        "name": "Curadoria de papeis Biblicooo",
+        "id": "data/curation/character-roles.json"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "eden",
+    "slug": "eden",
+    "name": "Eden",
+    "aliases": [
+      "Jardim do Eden"
+    ],
+    "type": "place",
+    "testament": "old",
+    "gender": null,
+    "primaryRole": null,
+    "roleTags": [],
+    "era": "origins",
+    "firstAppearance": {
+      "book": "Genesis",
+      "chapter": 2,
+      "verse": 8,
+      "order": 1002008
+    },
+    "books": [
+      "Genesis",
+      "Ezequiel",
+      "Joel"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "babel",
+    "slug": "babel",
+    "name": "Babel",
+    "aliases": [
+      "Torre de Babel"
+    ],
+    "type": "place",
+    "testament": "old",
+    "gender": null,
+    "primaryRole": null,
+    "roleTags": [],
+    "era": "origins",
+    "firstAppearance": {
+      "book": "Genesis",
+      "chapter": 11,
+      "verse": 9,
+      "order": 1011009
+    },
+    "books": [
+      "Genesis"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "canaa",
+    "slug": "canaa",
+    "name": "Canaa",
+    "aliases": [],
+    "type": "place",
+    "testament": "old",
+    "gender": null,
+    "primaryRole": null,
+    "roleTags": [],
+    "era": "patriarchs",
+    "firstAppearance": {
+      "book": "Genesis",
+      "chapter": 11,
+      "verse": 31,
+      "order": 1011031
+    },
+    "books": [
+      "Genesis",
+      "Exodo",
+      "Josue",
+      "Juizes"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "sodoma",
+    "slug": "sodoma",
+    "name": "Sodoma",
+    "aliases": [],
+    "type": "place",
+    "testament": "old",
+    "gender": null,
+    "primaryRole": null,
+    "roleTags": [],
+    "era": "patriarchs",
+    "firstAppearance": {
+      "book": "Genesis",
+      "chapter": 10,
+      "verse": 19,
+      "order": 1010019
+    },
+    "books": [
+      "Genesis",
+      "Deuteronomio",
+      "Mateus",
+      "2 Pedro"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "gomorra",
+    "slug": "gomorra",
+    "name": "Gomorra",
+    "aliases": [],
+    "type": "place",
+    "testament": "old",
+    "gender": null,
+    "primaryRole": null,
+    "roleTags": [],
+    "era": "patriarchs",
+    "firstAppearance": {
+      "book": "Genesis",
+      "chapter": 10,
+      "verse": 19,
+      "order": 1010019
+    },
+    "books": [
+      "Genesis",
+      "Deuteronomio",
+      "Mateus",
+      "2 Pedro"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "egito",
+    "slug": "egito",
+    "name": "Egito",
+    "aliases": [],
+    "type": "place",
+    "testament": "old",
+    "gender": null,
+    "primaryRole": null,
+    "roleTags": [],
+    "era": "patriarchs",
+    "firstAppearance": {
+      "book": "Genesis",
+      "chapter": 12,
+      "verse": 10,
+      "order": 1012010
+    },
+    "books": [
+      "Genesis",
+      "Exodo",
+      "Mateus",
+      "Atos"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "sinai",
+    "slug": "sinai",
+    "name": "Sinai",
+    "aliases": [
+      "Monte Sinai"
+    ],
+    "type": "place",
+    "testament": "old",
+    "gender": null,
+    "primaryRole": null,
+    "roleTags": [],
+    "era": "exodus",
+    "firstAppearance": {
+      "book": "Exodo",
+      "chapter": 19,
+      "verse": 11,
+      "order": 2019011
+    },
+    "books": [
+      "Exodo",
+      "Levitico",
+      "Numeros",
+      "Galatas",
+      "Hebreus"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "jerico",
+    "slug": "jerico",
+    "name": "Jerico",
+    "aliases": [],
+    "type": "place",
+    "testament": "old",
+    "gender": null,
+    "primaryRole": null,
+    "roleTags": [],
+    "era": "conquest",
+    "firstAppearance": {
+      "book": "Numeros",
+      "chapter": 22,
+      "verse": 1,
+      "order": 4022001
+    },
+    "books": [
+      "Numeros",
+      "Josue",
+      "Marcos",
+      "Lucas",
+      "Hebreus"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "jerusalem",
+    "slug": "jerusalem",
+    "name": "Jerusalem",
+    "aliases": [
+      "Siao"
+    ],
+    "type": "place",
+    "testament": "old",
+    "gender": null,
+    "primaryRole": null,
+    "roleTags": [],
+    "era": "monarchy",
+    "firstAppearance": {
+      "book": "Josue",
+      "chapter": 10,
+      "verse": 1,
+      "order": 6010001
+    },
+    "books": [
+      "Josue",
+      "2 Samuel",
+      "1 Reis",
+      "Neemias",
+      "Mateus",
+      "Atos",
+      "Apocalipse"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "belem",
+    "slug": "belem",
+    "name": "Belem",
+    "aliases": [
+      "Belem de Juda"
+    ],
+    "type": "place",
+    "testament": "old",
+    "gender": null,
+    "primaryRole": null,
+    "roleTags": [],
+    "era": "judges",
+    "firstAppearance": {
+      "book": "Genesis",
+      "chapter": 35,
+      "verse": 19,
+      "order": 1035019
+    },
+    "books": [
+      "Genesis",
+      "Rute",
+      "1 Samuel",
+      "Mateus",
+      "Lucas"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "nazare",
+    "slug": "nazare",
+    "name": "Nazare",
+    "aliases": [],
+    "type": "place",
+    "testament": "new",
+    "gender": null,
+    "primaryRole": null,
+    "roleTags": [],
+    "era": "jesus",
+    "firstAppearance": {
+      "book": "Mateus",
+      "chapter": 2,
+      "verse": 23,
+      "order": 40002023
+    },
+    "books": [
+      "Mateus",
+      "Marcos",
+      "Lucas",
+      "Joao",
+      "Atos"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "galileia",
+    "slug": "galileia",
+    "name": "Galileia",
+    "aliases": [],
+    "type": "place",
+    "testament": "old",
+    "gender": null,
+    "primaryRole": null,
+    "roleTags": [],
+    "era": "monarchy",
+    "firstAppearance": {
+      "book": "Josue",
+      "chapter": 20,
+      "verse": 7,
+      "order": 6020007
+    },
+    "books": [
+      "Josue",
+      "1 Reis",
+      "Isaias",
+      "Mateus",
+      "Marcos",
+      "Lucas",
+      "Joao"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "cafarnaum",
+    "slug": "cafarnaum",
+    "name": "Cafarnaum",
+    "aliases": [
+      "Capernaum"
+    ],
+    "type": "place",
+    "testament": "new",
+    "gender": null,
+    "primaryRole": null,
+    "roleTags": [],
+    "era": "jesus",
+    "firstAppearance": {
+      "book": "Mateus",
+      "chapter": 4,
+      "verse": 13,
+      "order": 40004013
+    },
+    "books": [
+      "Mateus",
+      "Marcos",
+      "Lucas",
+      "Joao"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "betania",
+    "slug": "betania",
+    "name": "Betania",
+    "aliases": [],
+    "type": "place",
+    "testament": "new",
+    "gender": null,
+    "primaryRole": null,
+    "roleTags": [],
+    "era": "jesus",
+    "firstAppearance": {
+      "book": "Mateus",
+      "chapter": 21,
+      "verse": 17,
+      "order": 40021017
+    },
+    "books": [
+      "Mateus",
+      "Marcos",
+      "Lucas",
+      "Joao"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "samaria",
+    "slug": "samaria",
+    "name": "Samaria",
+    "aliases": [],
+    "type": "place",
+    "testament": "old",
+    "gender": null,
+    "primaryRole": null,
+    "roleTags": [],
+    "era": "monarchy",
+    "firstAppearance": {
+      "book": "1 Reis",
+      "chapter": 13,
+      "verse": 32,
+      "order": 11013032
+    },
+    "books": [
+      "1 Reis",
+      "2 Reis",
+      "Lucas",
+      "Joao",
+      "Atos"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "damasco",
+    "slug": "damasco",
+    "name": "Damasco",
+    "aliases": [],
+    "type": "place",
+    "testament": "old",
+    "gender": null,
+    "primaryRole": null,
+    "roleTags": [],
+    "era": "patriarchs",
+    "firstAppearance": {
+      "book": "Genesis",
+      "chapter": 14,
+      "verse": 15,
+      "order": 1014015
+    },
+    "books": [
+      "Genesis",
+      "2 Reis",
+      "Isaias",
+      "Atos",
+      "Galatas"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "roma",
+    "slug": "roma",
+    "name": "Roma",
+    "aliases": [],
+    "type": "place",
+    "testament": "new",
+    "gender": null,
+    "primaryRole": null,
+    "roleTags": [],
+    "era": "early_church",
+    "firstAppearance": {
+      "book": "Atos",
+      "chapter": 2,
+      "verse": 10,
+      "order": 44002010
+    },
+    "books": [
+      "Atos",
+      "Romanos",
+      "2 Timoteo"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "corinto",
+    "slug": "corinto",
+    "name": "Corinto",
+    "aliases": [],
+    "type": "place",
+    "testament": "new",
+    "gender": null,
+    "primaryRole": null,
+    "roleTags": [],
+    "era": "early_church",
+    "firstAppearance": {
+      "book": "Atos",
+      "chapter": 18,
+      "verse": 1,
+      "order": 44018001
+    },
+    "books": [
+      "Atos",
+      "1 Corintios",
+      "2 Corintios"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      }
+    ],
+    "answerEligible": true
+  },
+  {
+    "id": "efeso",
+    "slug": "efeso",
+    "name": "Efeso",
+    "aliases": [],
+    "type": "place",
+    "testament": "new",
+    "gender": null,
+    "primaryRole": null,
+    "roleTags": [],
+    "era": "early_church",
+    "firstAppearance": {
+      "book": "Atos",
+      "chapter": 18,
+      "verse": 19,
+      "order": 44018019
+    },
+    "books": [
+      "Atos",
+      "Efesios",
+      "1 Timoteo",
+      "Apocalipse"
+    ],
+    "sources": [
+      {
+        "name": "Curadoria Biblicooo",
+        "id": "data/curation/entity-metadata.json"
+      }
+    ],
+    "answerEligible": true
+  }
+]

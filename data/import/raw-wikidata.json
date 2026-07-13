@@ -1,0 +1,578 @@
+{
+  "generatedAt": "2026-07-08T15:17:37.319Z",
+  "source": "existing raw cache",
+  "records": [
+    {
+      "seedId": "adam",
+      "search": "Adao",
+      "wikidata": {
+        "id": "Q70899",
+        "label": "Adão",
+        "description": "figura bíblica do livro de Gênesis",
+        "concepturi": "http://www.wikidata.org/entity/Q70899",
+        "matchedSearch": "Adao"
+      }
+    },
+    {
+      "seedId": "eva",
+      "search": "Eva",
+      "wikidata": {
+        "id": "Q830183",
+        "label": "Eva",
+        "description": "figura bíblica do livro de Gênesis",
+        "concepturi": "http://www.wikidata.org/entity/Q830183",
+        "matchedSearch": "Eva"
+      }
+    },
+    {
+      "seedId": "noe",
+      "search": "Noe",
+      "wikidata": {
+        "id": "Q81422",
+        "label": "Noé",
+        "description": "Profeta bíblico conhecido por construir uma arca",
+        "concepturi": "http://www.wikidata.org/entity/Q81422",
+        "matchedSearch": "Noe"
+      }
+    },
+    {
+      "seedId": "abraao",
+      "search": "Abraao",
+      "wikidata": {
+        "id": "Q9181",
+        "label": "Abraão",
+        "description": "Patriarca hebreu das religiões abraâmicas",
+        "concepturi": "http://www.wikidata.org/entity/Q9181",
+        "matchedSearch": "Abraao"
+      }
+    },
+    {
+      "seedId": "sara",
+      "search": "Sara",
+      "wikidata": {
+        "id": "Q833345",
+        "label": "Sara",
+        "description": "nome próprio feminino",
+        "concepturi": "http://www.wikidata.org/entity/Q833345",
+        "matchedSearch": "Sara"
+      }
+    },
+    {
+      "seedId": "lo",
+      "search": "Lo",
+      "wikidata": {
+        "id": "Q40574",
+        "label": "Ló",
+        "description": "personagem bíblico",
+        "concepturi": "http://www.wikidata.org/entity/Q40574",
+        "matchedSearch": "Lo"
+      }
+    },
+    {
+      "seedId": "isaque",
+      "search": "Isaque",
+      "wikidata": {
+        "id": "Q6075789",
+        "label": "Isaque",
+        "description": "Primaz da Igreja do Oriente de 399 a 410.",
+        "concepturi": "http://www.wikidata.org/entity/Q6075789",
+        "matchedSearch": "Isaque"
+      }
+    },
+    {
+      "seedId": "rebeca",
+      "search": "Rebeca",
+      "wikidata": {
+        "id": "Q40520",
+        "label": "Rebeca",
+        "description": "personagem bíblica",
+        "concepturi": "http://www.wikidata.org/entity/Q40520",
+        "matchedSearch": "Rebeca"
+      }
+    },
+    {
+      "seedId": "jaco",
+      "search": "Jaco",
+      "wikidata": {
+        "id": "Q289957",
+        "label": "Jacó",
+        "description": "personagem bíblico",
+        "concepturi": "http://www.wikidata.org/entity/Q289957",
+        "matchedSearch": "Jaco"
+      }
+    },
+    {
+      "seedId": "raquel",
+      "search": "Raquel",
+      "wikidata": {
+        "id": "Q207389",
+        "label": "Raquel",
+        "description": "Figura da bíblia",
+        "concepturi": "http://www.wikidata.org/entity/Q207389",
+        "matchedSearch": "Raquel"
+      }
+    },
+    {
+      "seedId": "jose",
+      "search": "Jose",
+      "wikidata": {
+        "error": "HTTP 429"
+      }
+    },
+    {
+      "seedId": "moises",
+      "search": "Moises",
+      "wikidata": {
+        "error": "Skipped after Wikidata rate limit"
+      }
+    },
+    {
+      "seedId": "miria",
+      "search": "Miriam",
+      "wikidata": {
+        "error": "Skipped after Wikidata rate limit"
+      }
+    },
+    {
+      "seedId": "arao",
+      "search": "Arao",
+      "wikidata": {
+        "error": "Skipped after Wikidata rate limit"
+      }
+    },
+    {
+      "seedId": "josue",
+      "search": "Josue",
+      "wikidata": {
+        "error": "Skipped after Wikidata rate limit"
+      }
+    },
+    {
+      "seedId": "calebe",
+      "search": "Calebe",
+      "wikidata": {
+        "error": "Skipped after Wikidata rate limit"
+      }
+    },
+    {
+      "seedId": "raabe",
+      "search": "Raabe",
+      "wikidata": {
+        "error": "Skipped after Wikidata rate limit"
+      }
+    },
+    {
+      "seedId": "debora",
+      "search": "Debora",
+      "wikidata": {
+        "error": "Skipped after Wikidata rate limit"
+      }
+    },
+    {
+      "seedId": "gideao",
+      "search": "Gideao",
+      "wikidata": {
+        "error": "Skipped after Wikidata rate limit"
+      }
+    },
+    {
+      "seedId": "sansao",
+      "search": "Sansao",
+      "wikidata": {
+        "error": "Skipped after Wikidata rate limit"
+      }
+    },
+    {
+      "seedId": "rute",
+      "search": "Rute",
+      "wikidata": {
+        "error": "Skipped after Wikidata rate limit"
+      }
+    },
+    {
+      "seedId": "samuel",
+      "search": "Samuel",
+      "wikidata": {
+        "error": "Skipped after Wikidata rate limit"
+      }
+    },
+    {
+      "seedId": "saul",
+      "search": "Saul",
+      "wikidata": {
+        "error": "Skipped after Wikidata rate limit"
+      }
+    },
+    {
+      "seedId": "davi",
+      "search": "Davi",
+      "wikidata": {
+        "error": "Skipped after Wikidata rate limit"
+      }
+    },
+    {
+      "seedId": "betsabe",
+      "search": "Bate-Seba",
+      "wikidata": {
+        "error": "Skipped after Wikidata rate limit"
+      }
+    },
+    {
+      "seedId": "salomao",
+      "search": "Salomao",
+      "wikidata": {
+        "error": "Skipped after Wikidata rate limit"
+      }
+    },
+    {
+      "seedId": "elias",
+      "search": "Elias",
+      "wikidata": {
+        "error": "Skipped after Wikidata rate limit"
+      }
+    },
+    {
+      "seedId": "eliseu",
+      "search": "Eliseu",
+      "wikidata": {
+        "error": "Skipped after Wikidata rate limit"
+      }
+    },
+    {
+      "seedId": "jezabel",
+      "search": "Jezabel",
+      "wikidata": {
+        "error": "Skipped after Wikidata rate limit"
+      }
+    },
+    {
+      "seedId": "isaias",
+      "search": "Isaias",
+      "wikidata": {
+        "error": "Skipped after Wikidata rate limit"
+      }
+    },
+    {
+      "seedId": "jeremias",
+      "search": "Jeremias",
+      "wikidata": {
+        "error": "Skipped after Wikidata rate limit"
+      }
+    },
+    {
+      "seedId": "ezequiel",
+      "search": "Ezequiel",
+      "wikidata": {
+        "error": "Skipped after Wikidata rate limit"
+      }
+    },
+    {
+      "seedId": "daniel",
+      "search": "Daniel",
+      "wikidata": {
+        "error": "Skipped after Wikidata rate limit"
+      }
+    },
+    {
+      "seedId": "ester",
+      "search": "Ester",
+      "wikidata": {
+        "error": "Skipped after Wikidata rate limit"
+      }
+    },
+    {
+      "seedId": "esdras",
+      "search": "Esdras",
+      "wikidata": {
+        "error": "Skipped after Wikidata rate limit"
+      }
+    },
+    {
+      "seedId": "neemias",
+      "search": "Neemias",
+      "wikidata": {
+        "error": "Skipped after Wikidata rate limit"
+      }
+    },
+    {
+      "seedId": "jonas",
+      "search": "Jonas",
+      "wikidata": {
+        "error": "Skipped after Wikidata rate limit"
+      }
+    },
+    {
+      "seedId": "maria-mae-de-jesus",
+      "search": "Maria",
+      "wikidata": {
+        "error": "Skipped after Wikidata rate limit"
+      }
+    },
+    {
+      "seedId": "jose-pai-terreno",
+      "search": "Jose de Nazare",
+      "wikidata": {
+        "error": "Skipped after Wikidata rate limit"
+      }
+    },
+    {
+      "seedId": "jesus",
+      "search": "Jesus",
+      "wikidata": {
+        "error": "Skipped after Wikidata rate limit"
+      }
+    },
+    {
+      "seedId": "joao-batista",
+      "search": "Joao Batista",
+      "wikidata": {
+        "error": "Skipped after Wikidata rate limit"
+      }
+    },
+    {
+      "seedId": "pedro",
+      "search": "Pedro",
+      "wikidata": {
+        "error": "Skipped after Wikidata rate limit"
+      }
+    },
+    {
+      "seedId": "andre",
+      "search": "Andre",
+      "wikidata": {
+        "error": "Skipped after Wikidata rate limit"
+      }
+    },
+    {
+      "seedId": "tiago-filho-zebedeu",
+      "search": "Tiago",
+      "wikidata": {
+        "error": "Skipped after Wikidata rate limit"
+      }
+    },
+    {
+      "seedId": "joao-apostolo",
+      "search": "Joao",
+      "wikidata": {
+        "error": "Skipped after Wikidata rate limit"
+      }
+    },
+    {
+      "seedId": "marta",
+      "search": "Marta",
+      "wikidata": {
+        "error": "Skipped after Wikidata rate limit"
+      }
+    },
+    {
+      "seedId": "maria-de-betania",
+      "search": "Maria de Betania",
+      "wikidata": {
+        "error": "Skipped after Wikidata rate limit"
+      }
+    },
+    {
+      "seedId": "lazaro",
+      "search": "Lazaro",
+      "wikidata": {
+        "error": "Skipped after Wikidata rate limit"
+      }
+    },
+    {
+      "seedId": "maria-madalena",
+      "search": "Maria Madalena",
+      "wikidata": {
+        "error": "Skipped after Wikidata rate limit"
+      }
+    },
+    {
+      "seedId": "judas-iscariotes",
+      "search": "Judas Iscariotes",
+      "wikidata": {
+        "error": "Skipped after Wikidata rate limit"
+      }
+    },
+    {
+      "seedId": "paulo",
+      "search": "Paulo",
+      "wikidata": {
+        "error": "Skipped after Wikidata rate limit"
+      }
+    },
+    {
+      "seedId": "barnabe",
+      "search": "Barnabe",
+      "wikidata": {
+        "error": "Skipped after Wikidata rate limit"
+      }
+    },
+    {
+      "seedId": "estevao",
+      "search": "Estevao",
+      "wikidata": {
+        "error": "Skipped after Wikidata rate limit"
+      }
+    },
+    {
+      "seedId": "filipe",
+      "search": "Filipe",
+      "wikidata": {
+        "error": "Skipped after Wikidata rate limit"
+      }
+    },
+    {
+      "seedId": "priscila",
+      "search": "Priscila",
+      "wikidata": {
+        "error": "Skipped after Wikidata rate limit"
+      }
+    },
+    {
+      "seedId": "aquila",
+      "search": "Aquila",
+      "wikidata": {
+        "error": "Skipped after Wikidata rate limit"
+      }
+    },
+    {
+      "seedId": "timoteo",
+      "search": "Timoteo",
+      "wikidata": {
+        "error": "Skipped after Wikidata rate limit"
+      }
+    },
+    {
+      "seedId": "eden",
+      "search": "Eden",
+      "wikidata": {
+        "error": "Skipped after Wikidata rate limit"
+      }
+    },
+    {
+      "seedId": "babel",
+      "search": "Babel",
+      "wikidata": {
+        "error": "Skipped after Wikidata rate limit"
+      }
+    },
+    {
+      "seedId": "canaa",
+      "search": "Canaa",
+      "wikidata": {
+        "error": "Skipped after Wikidata rate limit"
+      }
+    },
+    {
+      "seedId": "sodoma",
+      "search": "Sodoma",
+      "wikidata": {
+        "error": "Skipped after Wikidata rate limit"
+      }
+    },
+    {
+      "seedId": "gomorra",
+      "search": "Gomorra",
+      "wikidata": {
+        "error": "Skipped after Wikidata rate limit"
+      }
+    },
+    {
+      "seedId": "egito",
+      "search": "Egito",
+      "wikidata": {
+        "error": "Skipped after Wikidata rate limit"
+      }
+    },
+    {
+      "seedId": "sinai",
+      "search": "Sinai",
+      "wikidata": {
+        "error": "Skipped after Wikidata rate limit"
+      }
+    },
+    {
+      "seedId": "jerico",
+      "search": "Jerico",
+      "wikidata": {
+        "error": "Skipped after Wikidata rate limit"
+      }
+    },
+    {
+      "seedId": "jerusalem",
+      "search": "Jerusalem",
+      "wikidata": {
+        "error": "Skipped after Wikidata rate limit"
+      }
+    },
+    {
+      "seedId": "belem",
+      "search": "Belem",
+      "wikidata": {
+        "error": "Skipped after Wikidata rate limit"
+      }
+    },
+    {
+      "seedId": "nazare",
+      "search": "Nazare",
+      "wikidata": {
+        "error": "Skipped after Wikidata rate limit"
+      }
+    },
+    {
+      "seedId": "galileia",
+      "search": "Galileia",
+      "wikidata": {
+        "error": "Skipped after Wikidata rate limit"
+      }
+    },
+    {
+      "seedId": "cafarnaum",
+      "search": "Cafarnaum",
+      "wikidata": {
+        "error": "Skipped after Wikidata rate limit"
+      }
+    },
+    {
+      "seedId": "betania",
+      "search": "Betania",
+      "wikidata": {
+        "error": "Skipped after Wikidata rate limit"
+      }
+    },
+    {
+      "seedId": "samaria",
+      "search": "Samaria",
+      "wikidata": {
+        "error": "Skipped after Wikidata rate limit"
+      }
+    },
+    {
+      "seedId": "damasco",
+      "search": "Damasco",
+      "wikidata": {
+        "error": "Skipped after Wikidata rate limit"
+      }
+    },
+    {
+      "seedId": "roma",
+      "search": "Roma",
+      "wikidata": {
+        "error": "Skipped after Wikidata rate limit"
+      }
+    },
+    {
+      "seedId": "corinto",
+      "search": "Corinto",
+      "wikidata": {
+        "error": "Skipped after Wikidata rate limit"
+      }
+    },
+    {
+      "seedId": "efeso",
+      "search": "Efeso",
+      "wikidata": {
+        "error": "Skipped after Wikidata rate limit"
+      }
+    }
+  ]
+}

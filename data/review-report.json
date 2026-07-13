@@ -1,0 +1,19 @@
+{
+  "generatedAt": "2026-07-08T15:17:37.318Z",
+  "totals": {
+    "curatedSeeds": 76,
+    "appEntities": 76,
+    "answerEligible": 76,
+    "wikidataMatches": 10,
+    "wikidataErrors": 66
+  },
+  "missingGender": [],
+  "missingCharacterRoles": [],
+  "missingFirstAppearance": [],
+  "duplicateLabels": [],
+  "excludedEntities": [],
+  "notes": [
+    "First appearances, books, and historical eras are curated against the 66-book Protestant canon.",
+    "Wikidata enrichment is used for auditable labels and source IDs when network access is available."
+  ]
+}
