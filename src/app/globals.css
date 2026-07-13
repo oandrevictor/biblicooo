@@ -103,9 +103,10 @@ button {
 
 .chart-icon {
   display: grid;
+  place-content: center;
   grid-template-columns: repeat(3, 6px);
   align-items: end;
-  justify-content: center;
+  grid-template-rows: 26px;
   gap: 4px;
   padding: 0;
 }
