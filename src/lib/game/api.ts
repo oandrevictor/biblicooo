@@ -84,7 +84,8 @@ export function createPracticeStartResponse(
 
   return {
     ok: true,
-    answerId: answer.id
+    answerId: answer.id,
+    answerType: answer.type
   };
 }
 

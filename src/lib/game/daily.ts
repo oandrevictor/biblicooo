@@ -42,11 +42,13 @@ export function getDailyAnswer(dateString = getGameDate()) {
 
 export function getTodayPayload(date = new Date()) {
   const gameDate = getGameDate(date);
+  const answer = getDailyAnswer(gameDate);
 
   return {
     date: gameDate,
     timezone: GAME_TIMEZONE,
     attemptsAllowed: null,
-    answerPoolSize: getAnswerPool().length
+    answerPoolSize: getAnswerPool().length,
+    answerType: answer.type
   };
 }

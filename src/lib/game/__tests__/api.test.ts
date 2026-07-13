@@ -76,6 +76,7 @@ describe("practice responses", () => {
     const response = createPracticeStartResponse(() => 0);
 
     expect(response.answerId).toBe(pool[0]?.id);
+    expect(response.answerType).toBe(pool[0]?.type);
   });
 
   it("rejects invalid practice answers", () => {

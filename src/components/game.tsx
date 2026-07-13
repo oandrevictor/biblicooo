@@ -50,6 +50,7 @@ type PracticeStartResponse =
   | {
       ok: true;
       answerId: string;
+      answerType: PublicEntity["type"];
     }
   | {
       ok: false;
@@ -58,6 +59,15 @@ type PracticeStartResponse =
 
 type GameMode = "daily" | "practice";
 type Modal = "help" | "stats" | null;
+type Theme = "light" | "dark";
+
+type DailyStats = {
+  played: number;
+  solved: number;
+  currentStreak: number;
+  bestStreak: number;
+  distribution: number[];
+};
 
 const STORAGE_PREFIX = "biblicooo:";
 const BOOK_LABELS: Record<string, string> = {
@@ -143,23 +153,15 @@ function formatBook(book: string) {
 }
 
 function firstAppearanceLabel(feedback: GuessFeedback) {
-  const { status, guess } = feedback.firstAppearance;
-  if (status === "same_book") {
-    return formatBook(guess.book);
-  }
-
-  return status === "before"
-    ? `${formatBook(guess.book)} ←`
-    : `${formatBook(guess.book)} →`;
+  return formatBook(feedback.firstAppearance.guess.book);
 }
 
 function eraLabel(feedback: GuessFeedback) {
-  const label = ERA_LABELS[feedback.era.guess];
-  if (feedback.era.status === "match") {
-    return label;
-  }
+  return ERA_LABELS[feedback.era.guess];
+}
 
-  return feedback.era.status === "before" ? `${label} ←` : `${label} →`;
+function relativePositionLabel(status: "before" | "after") {
+  return status === "before" ? "Depois" : "Antes";
 }
 
 function sharedBookLabel(feedback: GuessFeedback) {
@@ -228,14 +230,25 @@ function parseStoredAttempts(value: string): StoredAttempt[] {
   }
 }
 
-function readLocalDailyStats() {
+function dateOrdinal(date: string) {
+  const [year, month, day] = date.split("-").map(Number);
+  return Math.floor(Date.UTC(year, month - 1, day) / 86_400_000);
+}
+
+function readLocalDailyStats(todayDate?: string): DailyStats {
   let played = 0;
   let solved = 0;
-  let totalAttempts = 0;
+  const solvedDates: string[] = [];
+  const distribution = Array.from({ length: 6 }, () => 0);
 
   for (let index = 0; index < window.localStorage.length; index += 1) {
     const key = window.localStorage.key(index);
     if (!key?.startsWith(STORAGE_PREFIX)) {
+      continue;
+    }
+
+    const date = key.slice(STORAGE_PREFIX.length);
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) {
       continue;
     }
 
@@ -246,17 +259,40 @@ function readLocalDailyStats() {
     }
 
     played += 1;
-    totalAttempts += attempts.length;
 
     if (attempts.some((attempt) => attempt.correct)) {
       solved += 1;
+      solvedDates.push(date);
+      distribution[Math.min(attempts.length, 6) - 1] += 1;
+    }
+  }
+
+  solvedDates.sort();
+  let bestStreak = 0;
+  let runningStreak = 0;
+  let previousOrdinal: number | null = null;
+
+  for (const date of solvedDates) {
+    const ordinal = dateOrdinal(date);
+    runningStreak = previousOrdinal === ordinal - 1 ? runningStreak + 1 : 1;
+    bestStreak = Math.max(bestStreak, runningStreak);
+    previousOrdinal = ordinal;
+  }
+
+  let currentStreak = runningStreak;
+  if (todayDate && previousOrdinal !== null) {
+    const daysSinceLastWin = dateOrdinal(todayDate) - previousOrdinal;
+    if (daysSinceLastWin > 1) {
+      currentStreak = 0;
     }
   }
 
   return {
     played,
     solved,
-    totalAttempts
+    currentStreak,
+    bestStreak,
+    distribution
   };
 }
 
@@ -310,6 +346,9 @@ export function Game() {
   const [dailyAttempts, setDailyAttempts] = useState<StoredAttempt[]>([]);
   const [practiceAttempts, setPracticeAttempts] = useState<StoredAttempt[]>([]);
   const [practiceAnswerId, setPracticeAnswerId] = useState<string | null>(null);
+  const [practiceAnswerType, setPracticeAnswerType] = useState<
+    PublicEntity["type"] | null
+  >(null);
   const [revealedAnswer, setRevealedAnswer] = useState<EndGameAnswer | null>(
     null
   );
@@ -317,10 +356,13 @@ export function Game() {
   const [error, setError] = useState("");
   const [shareStatus, setShareStatus] = useState("");
   const [activeModal, setActiveModal] = useState<Modal>(null);
-  const [dailyStats, setDailyStats] = useState({
+  const [theme, setTheme] = useState<Theme>("light");
+  const [dailyStats, setDailyStats] = useState<DailyStats>({
     played: 0,
     solved: 0,
-    totalAttempts: 0
+    currentStreak: 0,
+    bestStreak: 0,
+    distribution: [0, 0, 0, 0, 0, 0]
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -342,7 +384,7 @@ export function Game() {
       if (stored) {
         setDailyAttempts(parseStoredAttempts(stored));
       }
-      setDailyStats(readLocalDailyStats());
+      setDailyStats(readLocalDailyStats(todayPayload.date));
     }
 
     loadGame().catch(() => {
@@ -359,8 +401,42 @@ export function Game() {
       `${STORAGE_PREFIX}${today.date}`,
       JSON.stringify(dailyAttempts)
     );
-    setDailyStats(readLocalDailyStats());
+    setDailyStats(readLocalDailyStats(today.date));
   }, [dailyAttempts, today]);
+
+  useEffect(() => {
+    const savedTheme = window.localStorage.getItem("biblicooo-theme");
+    const preferredTheme = window.matchMedia("(prefers-color-scheme: dark)")
+      .matches
+      ? "dark"
+      : "light";
+    const nextTheme = savedTheme === "dark" || savedTheme === "light"
+      ? savedTheme
+      : preferredTheme;
+
+    setTheme(nextTheme);
+    document.documentElement.dataset.theme = nextTheme;
+  }, []);
+
+  useEffect(() => {
+    if (!activeModal) {
+      return;
+    }
+
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setActiveModal(null);
+      }
+    };
+
+    document.body.classList.add("modal-open");
+    window.addEventListener("keydown", closeOnEscape);
+
+    return () => {
+      document.body.classList.remove("modal-open");
+      window.removeEventListener("keydown", closeOnEscape);
+    };
+  }, [activeModal]);
 
   useEffect(() => {
     async function revealAnswer() {
@@ -402,6 +478,7 @@ export function Game() {
     setRevealedAnswer(null);
     setPracticeAttempts([]);
     setPracticeAnswerId(null);
+    setPracticeAnswerType(null);
     setInput("");
 
     try {
@@ -416,6 +493,7 @@ export function Game() {
       }
 
       setPracticeAnswerId(payload.answerId);
+      setPracticeAnswerType(payload.answerType);
     } catch {
       setError("Não foi possível iniciar a prática.");
     }
@@ -444,15 +522,58 @@ export function Game() {
   const solvedAttempt = attempts.find((attempt) => attempt.correct);
   const gameOver = solved;
   const isPractice = mode === "practice";
+  const answerType = isPractice ? practiceAnswerType : today?.answerType;
+
+  const availableEntities = useMemo(
+    () =>
+      answerType
+        ? entities.filter((entity) => entity.type === answerType)
+        : [],
+    [answerType, entities]
+  );
 
   const selectedEntity = useMemo(() => {
     const normalized = normalizeText(input);
-    return entities.find((entity) =>
+    return availableEntities.find((entity) =>
       [entity.name, ...entity.aliases]
         .map(normalizeText)
         .some((candidate) => candidate === normalized)
     );
-  }, [entities, input]);
+  }, [availableEntities, input]);
+
+  const suggestions = useMemo(() => {
+    const normalizedInput = normalizeText(input);
+    if (normalizedInput.length <= 4) {
+      return [];
+    }
+
+    return availableEntities
+      .filter((entity) => !guessedIds.has(entity.id))
+      .map((entity) => {
+        const normalizedName = normalizeText(entity.name);
+        const candidates = [entity.name, ...entity.aliases].map(normalizeText);
+
+        return {
+          entity,
+          rank: normalizedName.startsWith(normalizedInput)
+            ? 0
+            : candidates.some((candidate) => candidate.startsWith(normalizedInput))
+              ? 1
+              : 2,
+          matches: candidates.some((candidate) =>
+            candidate.includes(normalizedInput)
+          )
+        };
+      })
+      .filter((candidate) => candidate.matches)
+      .sort(
+        (first, second) =>
+          first.rank - second.rank ||
+          first.entity.name.localeCompare(second.entity.name, "pt-BR")
+      )
+      .slice(0, 6)
+      .map(({ entity }) => entity);
+  }, [availableEntities, guessedIds, input]);
 
   async function submitGuess(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -545,16 +666,35 @@ export function Game() {
     setRevealedAnswer(null);
   }
 
+  function selectSuggestion(entity: PublicEntity) {
+    setInput(entity.name);
+    setError("");
+  }
+
+  function toggleTheme() {
+    const nextTheme = theme === "light" ? "dark" : "light";
+    setTheme(nextTheme);
+    document.documentElement.dataset.theme = nextTheme;
+    window.localStorage.setItem("biblicooo-theme", nextTheme);
+  }
+
   const winRate =
     dailyStats.played === 0
       ? 0
       : Math.round((dailyStats.solved / dailyStats.played) * 100);
+  const maxDistribution = Math.max(...dailyStats.distribution, 1);
 
   return (
     <main className="shell">
       <header className="topbar">
         <h1 className="brand">
-          Biblic<span>.ooo</span>
+          <span className="book-mark" aria-hidden="true">
+            <i />
+            <i />
+          </span>
+          <span className="brand-name">
+            Biblic<span>.ooo</span>
+          </span>
         </h1>
         <div className="header-actions" aria-label="Ações">
           <button
@@ -577,8 +717,25 @@ export function Game() {
             <span />
             <span />
           </button>
+          <button
+            className="icon-button theme-button"
+            type="button"
+            aria-label={
+              theme === "light" ? "Ativar modo escuro" : "Ativar modo claro"
+            }
+            title={theme === "light" ? "Modo escuro" : "Modo claro"}
+            onClick={toggleTheme}
+          >
+            <span aria-hidden="true">{theme === "light" ? "☾" : "☀"}</span>
+          </button>
         </div>
       </header>
+
+      <div className="ornament" aria-hidden="true">
+        <span />
+        <b>✦</b>
+        <span />
+      </div>
 
       <section className="game-board">
         <div className="mode-tabs" aria-label="Modo de jogo">
@@ -641,10 +798,19 @@ export function Game() {
                 <input
                   id="guess"
                   className="guess-input"
-                  list="entity-options"
+                  role="combobox"
+                  aria-autocomplete="list"
+                  aria-controls="entity-suggestions"
+                  aria-expanded={suggestions.length > 0}
                   value={input}
                   onChange={(event) => setInput(event.target.value)}
-                  placeholder="Digite um nome ou lugar bíblico..."
+                  placeholder={
+                    answerType === "character"
+                      ? "Digite um personagem bíblico..."
+                      : answerType === "place"
+                        ? "Digite um lugar bíblico..."
+                        : "Digite um nome bíblico..."
+                  }
                   disabled={!today || (isPractice && !practiceAnswerId)}
                   autoComplete="off"
                 />
@@ -660,13 +826,24 @@ export function Game() {
                   Adivinhar
                 </button>
               </div>
-              <datalist id="entity-options">
-                {entities.map((entity) => (
-                  <option key={entity.id} value={entity.name}>
-                    {typeLabel(entity.type)}
-                  </option>
-                ))}
-              </datalist>
+              {suggestions.length > 0 ? (
+                <div
+                  id="entity-suggestions"
+                  className="suggestion-chips"
+                  aria-label="Sugestões de nomes"
+                >
+                  {suggestions.map((entity) => (
+                    <button
+                      className="suggestion-chip"
+                      type="button"
+                      key={entity.id}
+                      onClick={() => selectSuggestion(entity)}
+                    >
+                      {entity.name}
+                    </button>
+                  ))}
+                </div>
+              ) : null}
               {error ? <p className="error">{error}</p> : null}
               {isPractice && !practiceAnswerId && !error ? (
                 <p className="form-note">Preparando uma partida prática...</p>
@@ -713,6 +890,12 @@ export function Game() {
                     <div className={`clue ${statusClass(attempt.era.status)}`}>
                       <span>Era</span>
                       <strong>{eraLabel(attempt)}</strong>
+                      {attempt.era.status === "before" ||
+                      attempt.era.status === "after" ? (
+                        <small className="direction-badge">
+                          {relativePositionLabel(attempt.era.status)}
+                        </small>
+                      ) : null}
                     </div>
                     <div className={`clue ${statusClass(attempt.role.status)}`}>
                       <span>Papel</span>
@@ -725,6 +908,14 @@ export function Game() {
                     >
                       <span>Primeira Referência</span>
                       <strong>{firstAppearanceLabel(attempt)}</strong>
+                      {attempt.firstAppearance.status === "before" ||
+                      attempt.firstAppearance.status === "after" ? (
+                        <small className="direction-badge">
+                          {relativePositionLabel(
+                            attempt.firstAppearance.status
+                          )}
+                        </small>
+                      ) : null}
                     </div>
                     <div
                       className={`clue ${statusClass(attempt.sharedBook.status)}`}
@@ -759,66 +950,105 @@ export function Game() {
               <h2 id={`${activeModal}-title`}>
                 {activeModal === "help" ? "Como jogar" : "Estatísticas"}
               </h2>
-              <button
-                className="modal-close"
-                type="button"
-                aria-label="Fechar"
-                onClick={() => setActiveModal(null)}
-              >
-                X
-              </button>
             </div>
 
             {activeModal === "help" ? (
-              <div className="modal-body">
+              <div className="modal-body help-content">
                 <p>
-                  Tente adivinhar o personagem ou lugar bíblico. Depois de cada
-                  palpite, cada pista mostra se a sua escolha combina com a
-                  resposta.
+                  Adivinhe o nome bíblico, personagem ou lugar. Você pode tentar
+                  quantas vezes precisar. Após cada palpite, as pistas mostram o
+                  quanto ele se aproxima da resposta.
                 </p>
-                <div className="legend-grid">
-                  <span className="legend-square match" />
-                  <p>Verde: mesma característica.</p>
-                  <span className="legend-square neutral" />
-                  <p>Amarelo: a resposta está antes ou depois nessa ordem.</p>
-                  <span className="legend-square miss" />
-                  <p>Vermelho: característica diferente.</p>
-                  <span className="legend-square not-applicable" />
-                  <p>Cinza: pista não se aplica ao tipo de palpite.</p>
+                <p>
+                  <strong>Testamento</strong> - verde quando o palpite pertence ao
+                  mesmo testamento (AT ou NT).
+                </p>
+                <p>
+                  <strong>Gênero</strong> - verde quando os personagens têm o mesmo
+                  gênero. Para lugares, a pista não se aplica.
+                </p>
+                <p>
+                  <strong>Era</strong> - verde quando a era bíblica coincide. As
+                  etiquetas Antes e Depois indicam a posição da resposta.
+                </p>
+                <p>
+                  <strong>Papel</strong> - compara a categoria principal, como
+                  profeta, monarca, apóstolo ou lugar.
+                </p>
+                <p>
+                  <strong>Primeira referência</strong> - mostra o primeiro livro em
+                  que o palpite aparece. As etiquetas Antes e Depois mostram a
+                  posição da resposta na ordem bíblica.
+                </p>
+                <p>
+                  <strong>Livro em comum</strong> - verde quando palpite e resposta
+                  aparecem em pelo menos um mesmo livro.
+                </p>
+                <div className="legend-row" aria-label="Legenda das cores">
+                  <span><i className="legend-square match" />Certo</span>
+                  <span><i className="legend-square neutral" />Próximo</span>
+                  <span><i className="legend-square miss" />Diferente</span>
+                  <span><i className="legend-square not-applicable" />N/A</span>
                 </div>
-                <p>
-                  Na prática, uma nova resposta é escolhida quando você inicia
-                  outra rodada. A palavra do dia continua salva separadamente.
-                </p>
+                <button
+                  className="modal-action primary"
+                  type="button"
+                  onClick={() => setActiveModal(null)}
+                >
+                  Entendi
+                </button>
               </div>
             ) : (
-              <div className="modal-body">
-                <div className="stats-grid">
-                  <div className="stat-box">
-                    <span>Partidas</span>
+              <div className="modal-body stats-content">
+                <div className="stats-summary">
+                  <div>
                     <strong>{dailyStats.played}</strong>
+                    <span>Jogos</span>
                   </div>
-                  <div className="stat-box">
-                    <span>Vitórias</span>
-                    <strong>{dailyStats.solved}</strong>
-                  </div>
-                  <div className="stat-box">
-                    <span>Aproveitamento</span>
+                  <div>
                     <strong>{winRate}%</strong>
+                    <span>Vitórias</span>
                   </div>
-                  <div className="stat-box">
-                    <span>Tentativas hoje</span>
-                    <strong>{dailyAttempts.length}</strong>
+                  <div>
+                    <strong>{dailyStats.currentStreak}</strong>
+                    <span>Sequência</span>
                   </div>
-                  <div className="stat-box">
-                    <span>Prática atual</span>
-                    <strong>{practiceAttempts.length}</strong>
-                  </div>
-                  <div className="stat-box">
-                    <span>Banco</span>
-                    <strong>{today?.answerPoolSize ?? 0}</strong>
+                  <div>
+                    <strong>{dailyStats.bestStreak}</strong>
+                    <span>Melhor</span>
                   </div>
                 </div>
+
+                <section className="distribution" aria-label="Distribuição de tentativas">
+                  <h3>Distribuição de tentativas</h3>
+                  {dailyStats.distribution.map((count, index) => (
+                    <div className="distribution-row" key={index}>
+                      <span>{index === 5 ? "6+" : index + 1}</span>
+                      <div className="distribution-track">
+                        <i
+                          className={count > 0 ? "has-value" : ""}
+                          style={{
+                            width: `${Math.max((count / maxDistribution) * 100, count ? 8 : 0)}%`
+                          }}
+                        />
+                      </div>
+                      <strong>{count}</strong>
+                    </div>
+                  ))}
+                </section>
+
+                <div className="stats-note">
+                  <span>Tentativas hoje</span>
+                  <strong>{dailyAttempts.length}</strong>
+                </div>
+
+                <button
+                  className="modal-action"
+                  type="button"
+                  onClick={() => setActiveModal(null)}
+                >
+                  Fechar
+                </button>
               </div>
             )}
           </section>

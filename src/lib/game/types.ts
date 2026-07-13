@@ -105,6 +105,7 @@ export type TodayPayload = {
   timezone: string;
   attemptsAllowed: number | null;
   answerPoolSize: number;
+  answerType: EntityType;
 };
 
 export type EndGameAnswer = {
@@ -150,6 +151,7 @@ export type RevealResponse =
 export type PracticeStartResponse = {
   ok: true;
   answerId: string;
+  answerType: EntityType;
 };
 
 export type PracticeGuessRequest = {
