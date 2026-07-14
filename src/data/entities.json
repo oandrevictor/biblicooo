@@ -1797,25 +1797,27 @@
   },
   {
     "id": "lazaro",
-    "slug": "lazaro",
-    "name": "Lazaro",
-    "aliases": [],
+    "slug": "lazaro-de-betania",
+    "name": "Lázaro de Betânia",
+    "aliases": [
+      "Lázaro"
+    ],
     "type": "character",
     "testament": "new",
     "gender": "male",
-    "primaryRole": "family_member",
+    "primaryRole": "disciple_follower",
     "roleTags": [
+      "friend_of_jesus",
       "witness"
     ],
     "era": "jesus",
     "firstAppearance": {
-      "book": "Lucas",
-      "chapter": 16,
-      "verse": 20,
-      "order": 42016020
+      "book": "Joao",
+      "chapter": 11,
+      "verse": 1,
+      "order": 43011001
     },
     "books": [
-      "Lucas",
       "Joao"
     ],
     "sources": [

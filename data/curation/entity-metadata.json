@@ -565,14 +565,14 @@
   },
   {
     "id": "lazaro",
-    "name": "Lazaro",
+    "name": "Lázaro de Betânia",
     "aliases": ["Lázaro"],
     "type": "character",
     "testament": "new",
     "gender": "male",
     "era": "jesus",
-    "firstAppearance": { "book": "Lucas", "chapter": 16, "verse": 20 },
-    "books": ["Lucas", "Joao"],
+    "firstAppearance": { "book": "Joao", "chapter": 11, "verse": 1 },
+    "books": ["Joao"],
     "answerEligible": true
   },
   {

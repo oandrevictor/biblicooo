@@ -46,7 +46,7 @@
   "joao-apostolo": { "primaryRole": "apostle", "roleTags": ["writer"] },
   "marta": { "primaryRole": "disciple_follower", "roleTags": [] },
   "maria-de-betania": { "primaryRole": "disciple_follower", "roleTags": [] },
-  "lazaro": { "primaryRole": "family_member", "roleTags": ["witness"] },
+  "lazaro": { "primaryRole": "disciple_follower", "roleTags": ["friend_of_jesus", "witness"] },
   "maria-madalena": { "primaryRole": "disciple_follower", "roleTags": ["witness"] },
   "judas-iscariotes": { "primaryRole": "opponent", "roleTags": ["apostle"] },
   "paulo": { "primaryRole": "apostle", "roleTags": ["missionary", "church_leader"] },

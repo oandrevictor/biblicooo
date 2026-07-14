@@ -26,6 +26,13 @@ describe("daily word selection", () => {
     );
   });
 
+  it("keeps game two assigned to Lazarus of Bethany", () => {
+    expect(getDailyAnswer("2026-07-14")).toMatchObject({
+      id: "lazaro",
+      name: "Lázaro de Betânia"
+    });
+  });
+
   it("numbers the launch word as one and increments each day", () => {
     expect(getGameNumber("2026-07-13")).toBe(1);
     expect(getGameNumber("2026-07-14")).toBe(2);
