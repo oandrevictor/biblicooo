@@ -307,13 +307,13 @@ if (USE_RAW_CACHE) {
   const cached = JSON.parse(await readFile(rawPath, "utf8"));
   rawRecords = seeds.map((seed) => {
     const cachedRecord = cached.records.find((record) => record.seedId === seed.id);
-    return (
-      cachedRecord ?? {
+    return cachedRecord
+      ? { ...cachedRecord, search: seed.name }
+      : {
         seedId: seed.id,
         search: seed.name,
         wikidata: { error: "Missing from raw cache" }
-      }
-    );
+      };
   });
 } else {
   for (const seed of seeds) {

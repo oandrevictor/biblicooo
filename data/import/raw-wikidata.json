@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-14T05:30:42.094Z",
+  "generatedAt": "2026-07-14T05:37:14.449Z",
   "source": "existing raw cache",
   "records": [
     {
@@ -114,7 +114,7 @@
     },
     {
       "seedId": "jose",
-      "search": "Jose",
+      "search": "José do Egito",
       "wikidata": {
         "error": "HTTP 429"
       }
@@ -303,14 +303,14 @@
     },
     {
       "seedId": "maria-mae-de-jesus",
-      "search": "Maria",
+      "search": "Maria, mãe de Jesus",
       "wikidata": {
         "error": "Skipped after Wikidata rate limit"
       }
     },
     {
       "seedId": "jose-pai-terreno",
-      "search": "Jose de Nazare",
+      "search": "José de Nazaré",
       "wikidata": {
         "error": "Skipped after Wikidata rate limit"
       }
@@ -345,14 +345,14 @@
     },
     {
       "seedId": "tiago-filho-zebedeu",
-      "search": "Tiago",
+      "search": "Tiago, filho de Zebedeu",
       "wikidata": {
         "error": "Skipped after Wikidata rate limit"
       }
     },
     {
       "seedId": "joao-apostolo",
-      "search": "Joao",
+      "search": "João, o apóstolo",
       "wikidata": {
         "error": "Skipped after Wikidata rate limit"
       }
@@ -366,14 +366,14 @@
     },
     {
       "seedId": "maria-de-betania",
-      "search": "Maria de Betania",
+      "search": "Maria de Betânia",
       "wikidata": {
         "error": "Skipped after Wikidata rate limit"
       }
     },
     {
       "seedId": "lazaro",
-      "search": "Lazaro",
+      "search": "Lázaro de Betânia",
       "wikidata": {
         "error": "Skipped after Wikidata rate limit"
       }
@@ -415,7 +415,7 @@
     },
     {
       "seedId": "filipe",
-      "search": "Filipe",
+      "search": "Filipe, o Evangelista",
       "wikidata": {
         "error": "Skipped after Wikidata rate limit"
       }

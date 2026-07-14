@@ -1084,7 +1084,9 @@ export function Game() {
                     <dt>Papel</dt>
                     <dd>
                       A função principal do personagem, como profeta, monarca,
-                      apóstolo, sacerdote ou familiar. Não se aplica a lugares.
+                      apóstolo, sacerdote ou parente. “Parente” é usado somente
+                      quando o vínculo familiar é a principal forma de identificar
+                      o personagem. Não se aplica a lugares.
                     </dd>
                   </div>
                   <div>

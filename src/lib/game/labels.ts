@@ -34,9 +34,9 @@ export const CHARACTER_ROLE_LABELS: Record<CharacterRole, string> = {
   apostle: "Apóstolo",
   disciple_follower: "Discípulo ou seguidor",
   church_leader_missionary: "Líder ou missionário",
-  political_ruler: "Governante",
+  political_ruler: "Autoridade política",
   opponent: "Opositor",
-  family_member: "Familiar",
+  family_member: "Parente",
   other: "Outro"
 };
 

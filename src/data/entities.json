@@ -7,7 +7,7 @@
     "type": "character",
     "testament": "old",
     "gender": "male",
-    "primaryRole": "family_member",
+    "primaryRole": "patriarch_matriarch",
     "roleTags": [
       "ancestor"
     ],
@@ -48,7 +48,7 @@
     "type": "character",
     "testament": "old",
     "gender": "female",
-    "primaryRole": "family_member",
+    "primaryRole": "patriarch_matriarch",
     "roleTags": [
       "ancestor"
     ],
@@ -421,16 +421,17 @@
   },
   {
     "id": "jose",
-    "slug": "jose",
-    "name": "Jose",
+    "slug": "jose-do-egito",
+    "name": "José do Egito",
     "aliases": [
-      "Jose do Egito"
+      "José"
     ],
     "type": "character",
     "testament": "old",
     "gender": "male",
-    "primaryRole": "other",
+    "primaryRole": "political_ruler",
     "roleTags": [
+      "governor",
       "exile_official",
       "dream_interpreter"
     ],
@@ -806,7 +807,7 @@
     "type": "character",
     "testament": "old",
     "gender": "female",
-    "primaryRole": "family_member",
+    "primaryRole": "patriarch_matriarch",
     "roleTags": [
       "gentile",
       "ancestor"
@@ -960,7 +961,7 @@
     "type": "character",
     "testament": "old",
     "gender": "female",
-    "primaryRole": "family_member",
+    "primaryRole": "political_ruler",
     "roleTags": [
       "queen_mother"
     ],
@@ -1417,10 +1418,10 @@
   },
   {
     "id": "maria-mae-de-jesus",
-    "slug": "maria",
-    "name": "Maria",
+    "slug": "maria-mae-de-jesus",
+    "name": "Maria, mãe de Jesus",
     "aliases": [
-      "Maria mae de Jesus"
+      "Maria"
     ],
     "type": "character",
     "testament": "new",
@@ -1458,9 +1459,9 @@
   {
     "id": "jose-pai-terreno",
     "slug": "jose-de-nazare",
-    "name": "Jose de Nazare",
+    "name": "José de Nazaré",
     "aliases": [
-      "Jose esposo de Maria"
+      "José, esposo de Maria"
     ],
     "type": "character",
     "testament": "new",
@@ -1653,10 +1654,10 @@
   },
   {
     "id": "tiago-filho-zebedeu",
-    "slug": "tiago",
-    "name": "Tiago",
+    "slug": "tiago-filho-de-zebedeu",
+    "name": "Tiago, filho de Zebedeu",
     "aliases": [
-      "Tiago filho de Zebedeu"
+      "Tiago"
     ],
     "type": "character",
     "testament": "new",
@@ -1690,10 +1691,10 @@
   },
   {
     "id": "joao-apostolo",
-    "slug": "joao",
-    "name": "Joao",
+    "slug": "joao-o-apostolo",
+    "name": "João, o apóstolo",
     "aliases": [
-      "Joao apostolo"
+      "João"
     ],
     "type": "character",
     "testament": "new",
@@ -1738,7 +1739,9 @@
     "testament": "new",
     "gender": "female",
     "primaryRole": "disciple_follower",
-    "roleTags": [],
+    "roleTags": [
+      "bethany_family"
+    ],
     "era": "jesus",
     "firstAppearance": {
       "book": "Lucas",
@@ -1765,13 +1768,15 @@
   {
     "id": "maria-de-betania",
     "slug": "maria-de-betania",
-    "name": "Maria de Betania",
+    "name": "Maria de Betânia",
     "aliases": [],
     "type": "character",
     "testament": "new",
     "gender": "female",
     "primaryRole": "disciple_follower",
-    "roleTags": [],
+    "roleTags": [
+      "bethany_family"
+    ],
     "era": "jesus",
     "firstAppearance": {
       "book": "Lucas",
@@ -1807,6 +1812,7 @@
     "gender": "male",
     "primaryRole": "disciple_follower",
     "roleTags": [
+      "bethany_family",
       "friend_of_jesus",
       "witness"
     ],
@@ -2029,10 +2035,10 @@
   },
   {
     "id": "filipe",
-    "slug": "filipe",
-    "name": "Filipe",
+    "slug": "filipe-o-evangelista",
+    "name": "Filipe, o Evangelista",
     "aliases": [
-      "Filipe evangelista"
+      "Filipe"
     ],
     "type": "character",
     "testament": "new",
